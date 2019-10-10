@@ -3,13 +3,14 @@ extends "res://State Machine/state_machine.gd"
 func _ready():
 	states_map = {
 		"drop": $Drop,
-		"inventory": $Inventory,
+		"picked": $Picked,
 		"despawn": $Despawn,
 	}
 
 func _change_state(state_name):
-	if state_name == "despawn":
+	if state_name == "picked" || state_name == "despawn":
 		states_stack.clear()
+		set_active(false)
 	._change_state(state_name)
 
 func _physics_process(delta):

@@ -16,7 +16,7 @@ func update(delta):
 	.update(delta)
 
 func exit():
-	if $JumpDuration.is_stopped():
+	if not $JumpDuration.is_stopped():
 		$JumpDuration.stop()
 	return .exit()
 
