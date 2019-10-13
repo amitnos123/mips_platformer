@@ -17,6 +17,3 @@ func update(delta):
 	if input_direction:
 		emit_signal("finished", "walk")
 	return .update(delta)
-
-func _on_animation_finished(anim_name):
-	return ._on_animation_finished(anim_name)
