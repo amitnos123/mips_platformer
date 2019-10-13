@@ -64,8 +64,8 @@ func _input(event):
 func _physics_process(delta):
 	current_state.update(delta)
 
-func _on_animation_finished(anim_name):
+func _on_animation_finished():
 	if not _active:
 		return
-	current_state._on_animation_finished(anim_name)
+	current_state._on_animation_finished()
 #End - State Run
