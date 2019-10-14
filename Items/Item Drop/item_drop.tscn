@@ -7,7 +7,7 @@
 [ext_resource path="res://Items/Item Drop/States/despawn.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 26.7226, 22.2151 )
+extents = Vector2( 10.4363, 13.2884 )
 
 [node name="ItemDrop" type="Area2D"]
 
@@ -33,7 +33,7 @@ script = ExtResource( 4 )
 
 [node name="Despawn" type="Node" parent="States"]
 script = ExtResource( 5 )
-[connection signal="body_entered" from="." to="States/Drop" method="_on_ItemDrop_body_entered"]
-[connection signal="body_exited" from="." to="States/Drop" method="_on_ItemDrop_body_exited"]
+[connection signal="body_entered" from="." to="States/Drop" method="_on_body_entered"]
+[connection signal="body_exited" from="." to="States/Drop" method="_on_body_exited"]
 [connection signal="animation_finished" from="Animation" to="States" method="_on_animation_finished"]
 [connection signal="timeout" from="States/Drop/DespawnTimer" to="States/Drop" method="_on_DespawnTimer_timeout"]

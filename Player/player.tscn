@@ -44,4 +44,12 @@ script = ExtResource( 8 )
 [node name="JumpDuration" type="Timer" parent="States/Jump"]
 process_mode = 0
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D"]
+margin_left = -82.5187
+margin_top = 28.896
+margin_right = 8.48132
+margin_bottom = 42.896
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]

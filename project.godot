@@ -30,6 +30,10 @@ config/name="my_platformer_with_github"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Constants="*res://Config/Constants.gd"
+
 [editor_plugins]
 
 enabled=PoolStringArray(  )
