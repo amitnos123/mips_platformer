@@ -47,9 +47,29 @@ one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="Camera2D"]
-margin_left = -82.5187
-margin_top = 28.896
-margin_right = 8.48132
-margin_bottom = 42.896
+[node name="HUD" type="MarginContainer" parent="Camera2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/HUD"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Bars" type="VBoxContainer" parent="Camera2D/HUD/HBoxContainer"]
+margin_bottom = 40.0
+
+[node name="Bar" type="HBoxContainer" parent="Camera2D/HUD/HBoxContainer/Bars"]
+margin_bottom = 14.0
+
+[node name="Count" type="MarginContainer" parent="Camera2D/HUD/HBoxContainer/Bars/Bar"]
+margin_bottom = 14.0
+
+[node name="Backgound" type="NinePatchRect" parent="Camera2D/HUD/HBoxContainer/Bars/Bar/Count"]
+margin_bottom = 14.0
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/HUD/HBoxContainer/Bars/Bar/Count"]
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="Camera2D/HUD/HBoxContainer/Bars/Bar/Count"]
+margin_bottom = 14.0
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]
