@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GUI/Popup Window/close_button.tres" type="Texture" id=1]
+[ext_resource path="res://GUI/Popup Window/popup_window_controller.gd" type="Script" id=2]
+
+[node name="PopupWindow" type="WindowDialog"]
+margin_right = 888.0
+margin_bottom = 442.0
+custom_icons/close_highlight = ExtResource( 1 )
+custom_icons/close = ExtResource( 1 )
+window_title = "INSERT TITLE"
+resizable = true
+script = ExtResource( 2 )

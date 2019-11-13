@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/player_controller.gd" type="Script" id=1]
 [ext_resource path="res://Player/Sprite/player_animation.tres" type="SpriteFrames" id=2]
@@ -8,12 +8,17 @@
 [ext_resource path="res://Player/States/Motion/On Ground/run.gd" type="Script" id=6]
 [ext_resource path="res://Player/States/Motion/In Air/fall.gd" type="Script" id=7]
 [ext_resource path="res://Player/States/Motion/In Air/jump.gd" type="Script" id=8]
+[ext_resource path="res://Player/HUD/player_hud.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/Windows/Inventory/player_inventory.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.72864, 7.98734 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -24,6 +29,7 @@ animation = "run"
 
 [node name="States" type="Node" parent="."]
 script = ExtResource( 3 )
+START_STATE = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="States"]
 script = ExtResource( 4 )
@@ -46,30 +52,13 @@ process_mode = 0
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+current = true
 
-[node name="HUD" type="MarginContainer" parent="Camera2D"]
+[node name="HUD" parent="Camera2D" instance=ExtResource( 9 )]
+
+[node name="Windows" type="Control" parent="Camera2D/HUD"]
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/HUD"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="Bars" type="VBoxContainer" parent="Camera2D/HUD/HBoxContainer"]
-margin_bottom = 40.0
-
-[node name="Bar" type="HBoxContainer" parent="Camera2D/HUD/HBoxContainer/Bars"]
-margin_bottom = 14.0
-
-[node name="Count" type="MarginContainer" parent="Camera2D/HUD/HBoxContainer/Bars/Bar"]
-margin_bottom = 14.0
-
-[node name="Backgound" type="NinePatchRect" parent="Camera2D/HUD/HBoxContainer/Bars/Bar/Count"]
-margin_bottom = 14.0
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/HUD/HBoxContainer/Bars/Bar/Count"]
-margin_bottom = 14.0
-
-[node name="Label" type="Label" parent="Camera2D/HUD/HBoxContainer/Bars/Bar/Count"]
-margin_bottom = 14.0
+[node name="PlayerInventory" parent="Camera2D/HUD/Windows" instance=ExtResource( 10 )]
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]

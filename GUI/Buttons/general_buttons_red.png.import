@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bar_example_spreedshite.png-148b55825dabb1dce6ae5d4c2318a14b.stex"
+path="res://.import/general_buttons_red.png-c56c45c7ebc0c3b9c13a4d27603c082d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GUI/Bar/bar_example_spreedshite.png"
-dest_files=[ "res://.import/bar_example_spreedshite.png-148b55825dabb1dce6ae5d4c2318a14b.stex" ]
+source_file="res://GUI/Buttons/general_buttons_red.png"
+dest_files=[ "res://.import/general_buttons_red.png-c56c45c7ebc0c3b9c13a4d27603c082d.stex" ]
 
 [params]
 

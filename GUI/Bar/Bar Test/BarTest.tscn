@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GUI/Bar/bar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GUI/Bar/Bar Test/bar_container.tres" type="Texture" id=2]
+[ext_resource path="res://GUI/Bar/Bar Test/bar_fill.tres" type="Texture" id=3]
+
+[node name="Bar" instance=ExtResource( 1 )]
+margin_top = -600.0
+margin_right = -824.0
+margin_bottom = -551.0
+
+[node name="Count" parent="." index="0"]
+margin_right = 200.0
+margin_bottom = 49.0
+
+[node name="Gauge" parent="Count" index="0"]
+margin_right = 200.0
+margin_bottom = 49.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )

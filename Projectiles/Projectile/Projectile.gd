@@ -14,7 +14,6 @@ func _ready():
 func _physics_process(delta):
 	var collision = move_and_collide(direction * speed * delta)
 	if collision:
-		print_debug(collision.collider.name)
 		self.queue_free()
 
 func set_speed(value):
