@@ -16,5 +16,6 @@ margin_bottom = 49.0
 [node name="Gauge" parent="Count" index="0"]
 margin_right = 200.0
 margin_bottom = 49.0
+value = 100.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
