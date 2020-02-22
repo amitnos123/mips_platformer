@@ -4,6 +4,10 @@ export(float) var MAX_AIR_WALK_SPEED = 70
 
 # Initialize the state. E.g. change the animation
 func enter():
+	if get_parent().states_stack[1].name == 'Walk':
+		MAX_AIR_WALK_SPEED = get_parent().states_stack[1].MAX_WALK_SPEED
+	elif get_parent().states_stack[1].name == 'Run':
+		MAX_AIR_WALK_SPEED = get_parent().states_stack[1].MAX_RUN_SPEED
 	return .enter()
 
 func handle_input(event):

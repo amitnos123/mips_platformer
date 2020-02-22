@@ -1,4 +1,4 @@
-extends "res://Player/States/Motion/On Ground/on_ground.gd"
+extends "res://Player/States/Motion/On Ground/Standing/standing.gd"
 
 export(float) var MAX_RUN_SPEED = 150
 
@@ -13,7 +13,7 @@ func handle_input(event):
 
 func update(delta):
 	var input_direction = get_input_direction()
-	if not input_direction:
+	if not input_direction.x:
 		emit_signal("finished", "idle")
 	update_look_direction(input_direction)
 	velocity = input_direction * MAX_RUN_SPEED

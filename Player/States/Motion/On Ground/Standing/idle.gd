@@ -1,4 +1,4 @@
-extends "res://Player/States/Motion/On Ground/on_ground.gd"
+extends "res://Player/States/Motion/On Ground/Standing/standing.gd"
 
 # Initialize the state. E.g. change the animation
 func enter():
@@ -14,6 +14,6 @@ func handle_input(event):
 
 func update(delta):
 	var input_direction = get_input_direction()
-	if input_direction:
+	if input_direction.x:
 		emit_signal("finished", "walk")
 	return .update(delta)

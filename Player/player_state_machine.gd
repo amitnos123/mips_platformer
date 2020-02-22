@@ -7,6 +7,8 @@ func _ready():
 		"run": $Run,
 		"fall": $Fall,
 		"jump": $Jump,
+		"lie_down": $LieDown,
+		"crawl": $Crawl,
 	}
 
 func _change_state(state_name):
