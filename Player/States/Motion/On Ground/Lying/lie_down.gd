@@ -20,5 +20,6 @@ func update(delta):
 	if input_direction.x:
 		emit_signal("finished", "crawl")
 	if not input_direction.y:
+		emit_signal("stop_lying_down")
 		emit_signal("finished", "idle")
 	return .update(delta)

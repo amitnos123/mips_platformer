@@ -9,7 +9,7 @@
 [ext_resource path="res://Player/States/Motion/In Air/fall.gd" type="Script" id=7]
 [ext_resource path="res://Player/States/Motion/In Air/jump.gd" type="Script" id=8]
 [ext_resource path="res://Player/HUD/player_hud.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Player/Windows/Inventory/player_inventory.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GUI/Window/Window.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/lie_down.gd" type="Script" id=11]
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/crawl.gd" type="Script" id=12]
 
@@ -32,10 +32,12 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="CollisionBoxLieDown" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2 )
 shape = SubResource( 2 )
 disabled = true
 
 [node name="CollisionBoxCrawl" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5 )
 shape = SubResource( 3 )
 disabled = true
 
@@ -77,14 +79,19 @@ current = true
 
 [node name="HUD" parent="Camera2D" instance=ExtResource( 9 )]
 
-[node name="Windows" type="Control" parent="Camera2D"]
+[node name="Windows" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_scale = Vector2( 0.3, 0.3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerInventory" parent="Camera2D/Windows" instance=ExtResource( 10 )]
+[node name="Window" parent="Windows" instance=ExtResource( 10 )]
+margin_left = 47.0
+margin_top = -187.0
+margin_right = 204.0
+margin_bottom = -70.0
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]
 [connection signal="lying_down" from="States/LieDown" to="." method="_on_lie_down"]
 [connection signal="stop_lying_down" from="States/LieDown" to="." method="_on_stop_lying_down"]
