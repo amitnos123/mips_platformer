@@ -55,4 +55,7 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+[connection signal="gui_input" from="." to="." method="_on_Window_gui_input"]
+[connection signal="gui_input" from="PanelContainer" to="." method="drag_window"]
+[connection signal="gui_input" from="PanelContainer/Panel" to="." method="drag_window"]
 [connection signal="pressed" from="PanelContainer/Panel/Label/CloseButton" to="." method="_on_CloseButton_pressed"]

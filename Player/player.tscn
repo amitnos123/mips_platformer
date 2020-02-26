@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/player_controller.gd" type="Script" id=1]
 [ext_resource path="res://Player/Sprite/player_animation.tres" type="SpriteFrames" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://GUI/Window/Window.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/lie_down.gd" type="Script" id=11]
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/crawl.gd" type="Script" id=12]
+[ext_resource path="res://Player/Windows/Windows.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 8 )
@@ -83,6 +84,7 @@ current = true
 margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 0.3, 0.3 )
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,6 +94,12 @@ margin_left = 47.0
 margin_top = -187.0
 margin_right = 204.0
 margin_bottom = -70.0
+
+[node name="Window2" parent="Windows" instance=ExtResource( 10 )]
+margin_left = 246.667
+margin_top = -186.667
+margin_right = 403.667
+margin_bottom = -69.6667
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]
 [connection signal="lying_down" from="States/LieDown" to="." method="_on_lie_down"]
 [connection signal="stop_lying_down" from="States/LieDown" to="." method="_on_stop_lying_down"]
