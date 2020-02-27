@@ -9,7 +9,7 @@
 [ext_resource path="res://Player/States/Motion/In Air/fall.gd" type="Script" id=7]
 [ext_resource path="res://Player/States/Motion/In Air/jump.gd" type="Script" id=8]
 [ext_resource path="res://Player/HUD/player_hud.tscn" type="PackedScene" id=9]
-[ext_resource path="res://GUI/Window/Window.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Player/Windows/Inventory/player_inventory.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/lie_down.gd" type="Script" id=11]
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/crawl.gd" type="Script" id=12]
 [ext_resource path="res://Player/Windows/Windows.gd" type="Script" id=13]
@@ -89,17 +89,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Window" parent="Windows" instance=ExtResource( 10 )]
-margin_left = 47.0
-margin_top = -187.0
-margin_right = 204.0
-margin_bottom = -70.0
-
-[node name="Window2" parent="Windows" instance=ExtResource( 10 )]
-margin_left = 246.667
-margin_top = -186.667
-margin_right = 403.667
-margin_bottom = -69.6667
+[node name="PlayerInventory" parent="Windows" instance=ExtResource( 10 )]
+margin_left = 73.0
+margin_top = -203.0
+margin_right = 353.0
+margin_bottom = 64.0
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]
 [connection signal="lying_down" from="States/LieDown" to="." method="_on_lie_down"]
 [connection signal="stop_lying_down" from="States/LieDown" to="." method="_on_stop_lying_down"]

@@ -14,7 +14,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="WindowContainer" type="PanelContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -22,7 +22,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="PanelContainer"]
+[node name="WindowBackground" type="Panel" parent="WindowContainer"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 1017.0
@@ -32,7 +32,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="PanelContainer/Panel"]
+[node name="Label" type="Label" parent="WindowContainer/WindowBackground"]
 anchor_right = 1.0
 margin_bottom = 26.0
 custom_styles/normal = SubResource( 1 )
@@ -44,7 +44,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CloseButton" type="Button" parent="PanelContainer/Panel/Label"]
+[node name="ClickLabelAlert" type="Control" parent="WindowContainer/WindowBackground/Label"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="WindowContainer/WindowBackground/Label"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -56,6 +64,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="gui_input" from="." to="." method="_on_Window_gui_input"]
-[connection signal="gui_input" from="PanelContainer" to="." method="drag_window"]
-[connection signal="gui_input" from="PanelContainer/Panel" to="." method="drag_window"]
-[connection signal="pressed" from="PanelContainer/Panel/Label/CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="gui_input" from="WindowContainer" to="." method="_on_WindowContainer_gui_input"]
+[connection signal="gui_input" from="WindowContainer/WindowBackground" to="." method="_on_WindowBackground_gui_input"]
+[connection signal="gui_input" from="WindowContainer/WindowBackground/Label/ClickLabelAlert" to="." method="_on_Control_gui_input"]
+[connection signal="pressed" from="WindowContainer/WindowBackground/Label/CloseButton" to="." method="_on_CloseButton_pressed"]
