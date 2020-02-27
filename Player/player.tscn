@@ -80,20 +80,23 @@ current = true
 
 [node name="HUD" parent="Camera2D" instance=ExtResource( 9 )]
 
-[node name="Windows" type="Control" parent="."]
+[node name="Windows" type="Control" parent="Camera2D/HUD"]
 margin_right = 40.0
 margin_bottom = 40.0
-rect_scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerInventory" parent="Windows" instance=ExtResource( 10 )]
-margin_left = 73.0
-margin_top = -203.0
-margin_right = 353.0
-margin_bottom = 64.0
+[node name="PlayerInventory" parent="Camera2D/HUD/Windows" instance=ExtResource( 10 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 300.0
+margin_bottom = 300.0
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]
 [connection signal="lying_down" from="States/LieDown" to="." method="_on_lie_down"]
 [connection signal="stop_lying_down" from="States/LieDown" to="." method="_on_stop_lying_down"]
