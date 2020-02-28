@@ -66,5 +66,5 @@ __meta__ = {
 [connection signal="gui_input" from="." to="." method="_on_Window_gui_input"]
 [connection signal="gui_input" from="WindowContainer" to="." method="_on_WindowContainer_gui_input"]
 [connection signal="gui_input" from="WindowContainer/WindowBackground" to="." method="_on_WindowBackground_gui_input"]
-[connection signal="gui_input" from="WindowContainer/WindowBackground/Label/ClickLabelAlert" to="." method="_on_Control_gui_input"]
+[connection signal="gui_input" from="WindowContainer/WindowBackground/Label/ClickLabelAlert" to="." method="_on_ClickLabelAlert_gui_input"]
 [connection signal="pressed" from="WindowContainer/WindowBackground/Label/CloseButton" to="." method="_on_CloseButton_pressed"]

@@ -10,10 +10,7 @@ func _ready():
 func _on_CloseButton_pressed():
 	self.set_visible(false)
 
-func _on_Control_gui_input(event):
-#	if event is InputEventMouseButton:
-#		if event.pressed:
-#			print("asdasd")
+func _on_ClickLabelAlert_gui_input(event):
 	drag_window(event)
 
 func _on_WindowContainer_gui_input(event):
