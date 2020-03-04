@@ -1,6 +1,5 @@
 extends Area2D
 
-var itemData : Item
+signal picked(itemData)
 
-func _ready():
-	pass
+onready var itemData : Item = null

@@ -2,7 +2,7 @@ extends Control
 
 signal move_to_top
 
-var drag_position = null
+onready var drag_position : Vector2 = Vector2.ZERO
 
 func _ready():
 	pass
@@ -25,7 +25,7 @@ func drag_window(event):
 			drag_position = get_local_mouse_position()
 			emit_signal('move_to_top', self)
 		else:
-			drag_position = null
+			drag_position = Vector2.ZERO
 			
-	if event is InputEventMouse and drag_position:
+	if event is InputEventMouse and drag_position.length() != 0:
 		rect_global_position += get_local_mouse_position() - drag_position

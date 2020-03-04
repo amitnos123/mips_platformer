@@ -1,8 +1,8 @@
 extends "res://State Machine/state.gd"
 
-# Initialize the state. E.g. change the animation
 func enter():
 	owner.get_node("Animation").play("picked")
+	owner.emit_signal('picked', owner.itemData)
 	return
 
 func _on_animation_finished():

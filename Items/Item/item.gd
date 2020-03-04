@@ -2,20 +2,15 @@ extends Node
 #Class for saving the metadata of an item
 class_name Item
 
-var code : int = 0
-var generated_code : int = 0
-var dropAnimation : SpriteFrames = null
-var inventorySprite : Texture = null
-var dropAudio : AudioStream = null
-var pickAudio : AudioStream = null
+onready var code : int = 0
+onready var generated_code : int = 0
+onready var item_name : String = ''
+onready var drop_scene : PackedScene
+onready var inventory_scene : PackedScene
 
-func _init(code, generated_code, dropAnimation, inventorySprite, dropAudio = null, pickAudio = null):
+func _init(code : int, generated_code : int, item_name : String, drop_scene : PackedScene, inventory_scene : PackedScene):
 	self.code = code
 	self.generated_code = generated_code
-	self.dropAnimation = dropAnimation
-	self.inventorySprite = inventorySprite
-	self.dropAudio = dropAudio
-	self.pickAudio = pickAudio
-
-func create_item_drop():
-	pass
+	self.item_name = item_name
+	self.drop_scene = drop_scene
+	self.inventory_scene = inventory_scene

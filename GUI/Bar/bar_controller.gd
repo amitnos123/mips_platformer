@@ -2,9 +2,9 @@ extends HBoxContainer
 
 export(NodePath) var gaugeNodePath
 
-var barValue setget setBarValue, getBarValue
-var barMaxValue setget setBarMaxValue, getBarMaxValue
-var barMinValue setget setBarMinValue, getBarMinValue
+onready var barValue : float setget setBarValue, getBarValue
+onready var barMaxValue : float setget setBarMaxValue, getBarMaxValue
+onready var barMinValue : float setget setBarMinValue, getBarMinValue
 
 func _ready():
 	if not gaugeNodePath:

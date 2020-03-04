@@ -1,6 +1,6 @@
 extends "res://GUI/Window/Window.gd"
 
-var mouse_in_item_list = false
+onready var mouse_in_item_list : bool = false
 
 
 func _ready():
@@ -14,7 +14,7 @@ func drag_window(event): #_on_gui_input
 #		print("123123")
 		.drag_window(event)
 	else:
-		drag_position = null
+		drag_position = Vector2.ZERO
 
 
 func _on_ItemList_nothing_selected():

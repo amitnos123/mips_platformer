@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Items/Item Drop/item_drop.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Items/Item Drop Test/testAnimation.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Items/Item Test/Item Drop Test/testAnimation.tres" type="SpriteFrames" id=2]
 
-[node name="ItemDrop" index="0" instance=ExtResource( 1 )]
+[node name="ItemDrop" instance=ExtResource( 1 )]
 
 [node name="Animation" parent="." index="1"]
 frames = ExtResource( 2 )

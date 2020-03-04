@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/despawn.bmp-a7ee93d1ac5555f787860b425f675706.stex"
+path="res://.import/drop.bmp-dba2590004b244200fe6423195ca0711.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Item Drop Test/despawn.bmp"
-dest_files=[ "res://.import/despawn.bmp-a7ee93d1ac5555f787860b425f675706.stex" ]
+source_file="res://Items/Item Test/Item Drop Test/drop.bmp"
+dest_files=[ "res://.import/drop.bmp-dba2590004b244200fe6423195ca0711.stex" ]
 
 [params]
 

@@ -13,7 +13,7 @@
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/lie_down.gd" type="Script" id=11]
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/crawl.gd" type="Script" id=12]
 [ext_resource path="res://Player/Windows/Windows.gd" type="Script" id=13]
-[ext_resource path="res://GUI/Window/Inventory/WindowInventory.tscn" type="PackedScene" id=14]
+[ext_resource path="res://GUI/Window/Inventory/window_inventory.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 8 )
@@ -82,8 +82,6 @@ current = true
 [node name="HUD" parent="Camera2D" instance=ExtResource( 9 )]
 
 [node name="Windows" type="Control" parent="Camera2D/HUD"]
-margin_right = 40.0
-margin_bottom = 40.0
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -101,11 +99,10 @@ margin_right = 300.0
 margin_bottom = 300.0
 
 [node name="WindowInventory" parent="Camera2D/HUD/Windows" instance=ExtResource( 14 )]
-margin_left = 350.0
-margin_top = -38.0
-margin_right = 624.0
-margin_bottom = 108.0
-rect_scale = Vector2( 1.21212, 1.40271 )
+margin_left = 97.0
+margin_top = 8.0
+margin_right = 465.0
+margin_bottom = 353.0
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]
 [connection signal="lying_down" from="States/LieDown" to="." method="_on_lie_down"]
 [connection signal="stop_lying_down" from="States/LieDown" to="." method="_on_stop_lying_down"]

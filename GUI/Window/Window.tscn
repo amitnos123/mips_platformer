@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://GUI/Window/Window.gd" type="Script" id=1]
+[ext_resource path="res://GUI/Window/window.gd" type="Script" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 border_color = Color( 0.898039, 0, 0.14902, 1 )
@@ -63,7 +63,6 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-[connection signal="gui_input" from="." to="." method="_on_Window_gui_input"]
 [connection signal="gui_input" from="WindowContainer" to="." method="_on_WindowContainer_gui_input"]
 [connection signal="gui_input" from="WindowContainer/WindowBackground" to="." method="_on_WindowBackground_gui_input"]
 [connection signal="gui_input" from="WindowContainer/WindowBackground/Label/ClickLabelAlert" to="." method="_on_ClickLabelAlert_gui_input"]
