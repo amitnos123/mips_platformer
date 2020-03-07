@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+class_name Player
+
 signal direction_changed(new_direction)
 
 var look_direction = Vector2(1, 0) setget set_look_direction
@@ -45,3 +47,10 @@ func _on_stop_lying_down():
 	
 	$AnimatedSprite.set_position(Vector2.ZERO) 
 	return
+
+func is_inventory_full():
+	return $Camera2D/HUD/Windows/WindowInventory.is_inventory_full()
+
+func add_item(itemData : Item):
+	print('is_item_null ', itemData == null)
+	print('is_inventory_full ', $Camera2D/HUD/Windows/WindowInventory.is_inventory_full())

@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://Items/Item/item.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Player/player_controller.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "projectile",
 "language": "GDScript",
 "path": "res://Projectiles/Projectile/Projectile.gd"
 } ]
 _global_script_class_icons={
 "Item": "",
+"Player": "",
 "projectile": ""
 }
 
@@ -34,6 +40,10 @@ config/icon="res://icon.png"
 
 Constants="*res://Config/Constants.gd"
 
+[cursor]
+
+stdout/print_fps=false
+
 [editor_plugins]
 
 enabled=PoolStringArray(  )
@@ -41,6 +51,7 @@ enabled=PoolStringArray(  )
 [global]
 
 doubleclick=false
+cursor=false
 
 [input]
 

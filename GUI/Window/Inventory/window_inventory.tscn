@@ -19,8 +19,6 @@ __meta__ = {
 }
 
 [node name="ItemsGridContainer" type="GridContainer" parent="WindowContainer/WindowBackground/InventoryScrollContainer" index="0"]
-margin_right = 324.0
-margin_bottom = 1308.0
 columns = 4
 __meta__ = {
 "_edit_use_anchors_": false

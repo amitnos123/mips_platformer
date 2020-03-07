@@ -2,8 +2,6 @@ extends "res://State Machine/state.gd"
 
 export(float) var DESPAWN_TIME = 60
 
-var player_in_pick_area : bool = false
-
 # Initialize the state. E.g. change the animation
 func enter():
 	$DespawnTimer.start(DESPAWN_TIME)
@@ -15,9 +13,10 @@ func exit():
 	return
 
 func handle_input(event):
-	if player_in_pick_area:
-		if event.is_action_pressed("item_pick"):
-			emit_signal("finished", "picked")
+	if owner.playerInArea:
+		if not owner.playerInArea.is_inventory_full():
+			if event.is_action_pressed("item_pick"):
+				emit_signal("finished", "picked")
 	return
 
 func _on_DespawnTimer_timeout():
@@ -25,11 +24,3 @@ func _on_DespawnTimer_timeout():
 
 func _on_animation_finished():
 	pass
-
-func _on_body_entered(body):
-	if body.name == Constants.PLAYER_NODE_NAME:
-		player_in_pick_area = true
-
-func _on_body_exited(body):
-	if body.name == Constants.PLAYER_NODE_NAME:
-		player_in_pick_area = false
