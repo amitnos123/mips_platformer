@@ -33,8 +33,9 @@ func _on_ScrollContainer_gui_input(event):
 	.drag_window(event)
 
 func _on_itemContainer_select(container_id):
-	var itemInventoryTestNode = itemInventoryTest.instance()
-	$WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).itemData = itemInventoryTestNode.itemData
+	if not $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).itemData:
+		var itemInventoryTestNode = itemInventoryTest.instance()
+		$WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).itemData = itemInventoryTestNode.itemData
 
 func _on_itemContainer_unselect(container_id):
 	pass

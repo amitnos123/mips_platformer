@@ -18,13 +18,22 @@ func get_drag_data(_pos):
 	tr.rect_size = self.rect_size
 	tr.expand = true
 	set_drag_preview(tr)
-	return itemData
+	
+	return get_parent()
 
 func can_drop_data(_pos, data):
-	return (data is Item)
+	#return (data is Item)
+	return (data is ItemContainer)
 
-func drop_data(_pos, data):
-	self.itemData = data
+func drop_data(_pos, item_container):
+	var item_inventory = item_container.get_child(0)
+	var item_inventory_duplicate = item_inventory.duplicate()
+	
+	self.get_parent().selected = false
+	item_container.selected = false
+	
+	item_inventory.replace_by(self.duplicate())
+	replace_by(item_inventory_duplicate)
 
 func set_itemData(value):
 	itemData = value
