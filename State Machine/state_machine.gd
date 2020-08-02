@@ -20,6 +20,8 @@ func _ready():
 #		Connect the signal 'finished' to the function _change_state
 	initialize(START_STATE)
 
+# Initialize the state machine by the starting state
+# @param {NodePath} start_state - the start which the machine starts on
 func initialize(start_state):
 #	Initialize the state machine by the starting state
 	if not states_stack.empty():
