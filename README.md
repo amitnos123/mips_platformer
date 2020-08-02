@@ -19,7 +19,7 @@ Content
 | Directory | Explanation |
 |---|---|
 | Config | Hold all of the configuration files |
-|      |
+|   |   |
 | GUI | Hold all of the GUI realted things. |
 | GUI/Bar | Hold all of the bar realted things, like progress bar. The scene for a general bar is in the directory. Also, any extentions of it, exist a directory in it. |
 | GUI/Buttons  | Hold all of the button realted things, like close button. The scene for a general button is in the directory. Also, any extentions of it, exist a directory in it. |
