@@ -35,7 +35,7 @@ Content
 
 ### <u>Items/Item Drop</u>
 
-### <u>Items/Item Item Inventory</u>
+### <u>Items/Item Inventory</u>
 
 ### <u>Player</u>
 
