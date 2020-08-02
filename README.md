@@ -33,7 +33,7 @@ Naming Structure
 
 Function Description
 --------------------
-Wirting the description before the function definition in the following format([Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler) by Google):<br/>
+Wirting the description before the function definition in the following format:<br/>
 <br/>
 \# Function Description<br/>
 \# @param {type} arg1 - Param Description<br/>
