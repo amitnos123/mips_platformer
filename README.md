@@ -41,11 +41,18 @@ Naming Structure
 * Export variable - All uppercase and underscore between words.
 * Directory - Spacing between names, uppercase for each word.
 
-| Thingy | Writing Type |
+| Name Of | Writing Type |
 |---|---|
-|   |   |
-|   |   |
-|   |   |
+| Inner function variables  |   |
+| Script |   |
+| Scene |   |
+| Resource | b |
+| Function | b |
+| Function's arguments | b |
+| Signal | b |
+| Constants | b |
+| Export variable | b |
+| Directory | b |
 
 ***
 
