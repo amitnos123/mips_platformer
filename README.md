@@ -19,6 +19,7 @@ Content
 | Directory | Explanation |
 |---|---|
 | Config | Hold all of the configuration files |
+|      |
 | GUI | Hold all of the GUI realted things. |
 | GUI/Bar | Hold all of the bar realted things, like progress bar. The scene for a general bar is in the directory. Also, any extentions of it, exist a directory in it. |
 | GUI/Buttons  | Hold all of the button realted things, like close button. The scene for a general button is in the directory. Also, any extentions of it, exist a directory in it. |
@@ -27,6 +28,7 @@ Content
 | Items/Item | A directory for Item class. |
 | Items/Item Drop | A directory for item drop scene template. |
 | Items/Item Inventory | A directory for item inventory scene template. |
+|   |   |
 | Player | Hold all of player realted things. |
 | Player/HUD | Hold all of player's HUD realted things. |
 | Player/Sprite | Hold all of player's sprite. |
