@@ -36,24 +36,6 @@ Naming Structure
 | Export variable | [Other](#other) | All uppercase and underscore between words. |
 | Directory | [Other](#other) | Spacing between names, uppercase for each word. |
 
-### <a name="camel_case"><u>Camel Case</u></a>
-* Inner function variables 
-
-
-### <a name="snake_case"><u>Snake Case</u></a>
-* Script's name
-* Scene's name
-* Resource's name
-* Function
-* Function's arguments
-* Signal
-
-
-### <a name="other"><u>Other</u></a>
-* Constants - All uppercase and underscore between words.
-* Export variable - All uppercase and underscore between words.
-* Directory - Spacing between names, uppercase for each word.
-
 ***
 
 Function Description
