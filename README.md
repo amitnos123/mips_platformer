@@ -61,6 +61,11 @@ A directory for projectile scene template.
 ### <u>State Machine</u>
 A directory for State Machine and State scripts.
 
+| Directory | Explanation |
+|---|---|
+| Projectiles/Projectile  | A directory for projectile scene template. |
+| State Machine  | A directory for State Machine and State scripts. |
+
 ***
 
 <a name="naming_structure">Naming Structure</a>
