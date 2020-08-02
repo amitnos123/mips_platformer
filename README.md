@@ -1,10 +1,20 @@
 # mips_platformer
  
-General Notes
+Content
+-------------
+
+* [General Notes](#general_notes)
+* [Project Structure](#project_structure)
+* [Naming Structure](#naming_structure)
+* [Function Description](#function_description)
+
+***
+
+<a name="general_notes">General Notes</a>
 -------------
 ***
 
-Project Structure
+<a name="project_structure">Project Structure</a>
 -----------------
 
 ### <u>Config</u>
@@ -20,7 +30,7 @@ Project Structure
 ### <u>State Machine</u>
 ***
 
-Naming Structure
+<a name="naming_structure">Naming Structure</a>
 ----------------
 
 | Name Of | Writing Type | Note |
@@ -38,7 +48,7 @@ Naming Structure
 
 ***
 
-Function Description
+<a name="function_description">Function Description</a>
 --------------------
 Wirting the description before the function definition in the following format:<br/>
 <br/>
