@@ -50,10 +50,6 @@ Constants="*res://Config/Constants.gd"
 
 stdout/print_fps=false
 
-[editor_plugins]
-
-enabled=PoolStringArray(  )
-
 [global]
 
 doubleclick=false
