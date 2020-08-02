@@ -35,13 +35,13 @@ Function Description
 --------------------
 Wirting the description before the function definition in the following format([Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler) by Google):<br/>
 <br/>
-# Function Description<br/>
-# @param {type} arg1 - Param Description<br/>
-# @param {type} arg2 - Param Description<br/>
-# .<br/>
-# .<br/>
-# .<br/>
-# @returns {type} - Return Description<br/>
+\# Function Description<br/>
+\# @param {type} arg1 - Param Description<br/>
+\# @param {type} arg2 - Param Description<br/>
+\# .<br/>
+\# .<br/>
+\# .<br/>
+\# @returns {type} - Return Description<br/>
 <br/>
 
 #### for example:
