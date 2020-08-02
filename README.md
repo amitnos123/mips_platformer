@@ -41,7 +41,7 @@ Naming Structure
 * Export variable - All uppercase and underscore between words.
 * Directory - Spacing between names, uppercase for each word.
 
-|   |   |
+| Thingy | Writing Type |
 |---|---|
 |   |   |
 |   |   |
