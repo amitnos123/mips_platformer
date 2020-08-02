@@ -23,11 +23,24 @@ Project Structure
 Naming Structure
 ----------------
 
-### <u>Camel Case</u>
+| Name Of | Writing Type |
+|---|---|
+| Inner function variables  | [Camel Case](#camel_case) |
+| Script | [Snake Case](#snake_case) |
+| Scene | [Snake Case](#snake_case) |
+| Resource | [Snake Case](#snake_case) |
+| Function | [Snake Case](#snake_case) |
+| Function's arguments | [Snake Case](#snake_case) |
+| Signal | [Snake Case](#snake_case) |
+| Constants | [Other](#other) |
+| Export variable | [Other](#other) |
+| Directory | [Other](#other) |
+
+### <a name="camel_case"><u>Camel Case</u></a>
 * Inner function variables 
 
 
-### <u>Snake Case</u>
+### <a name="snake_case"><u>Snake Case</u></a>
 * Script's name
 * Scene's name
 * Resource's name
@@ -36,23 +49,10 @@ Naming Structure
 * Signal
 
 
-### <u>Other</u>
+### <a name="other"><u>Other</u></a>
 * Constants - All uppercase and underscore between words.
 * Export variable - All uppercase and underscore between words.
 * Directory - Spacing between names, uppercase for each word.
-
-| Name Of | Writing Type |
-|---|---|
-| Inner function variables  |   |
-| Script |   |
-| Scene |   |
-| Resource | b |
-| Function | b |
-| Function's arguments | b |
-| Signal | b |
-| Constants | b |
-| Export variable | b |
-| Directory | b |
 
 ***
 
