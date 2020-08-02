@@ -47,8 +47,8 @@ Wirting the description before the function definition in the following format([
 
 #### for example:
 <br/>
-\# Initialize the state machine by the starting state
-\# @param {NodePath} start_state - the start which the machine starts on
+\# Initialize the state machine by the starting state<br/>
+\# @param {NodePath} start_state - the start which the machine starts on<br/>
 <br/>
 
 ***
