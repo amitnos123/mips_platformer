@@ -16,53 +16,21 @@ Content
 
 <a name="project_structure">Project Structure</a>
 -----------------
-
-### <u>Config</u>
-
-### <u>GUI</u>
-Hold all of the GUI realted things. 
-
-### <u>GUI/Bar</u>
-Hold all of the bar realted things, like progress bar. The scene for a general bar is in the directory. Also, any extentions of it, exist a directory in it. 
-
-### <u>GUI/Buttons</u>
-Hold all of the button realted things, like close button. The scene for a general button is in the directory. Also, any extentions of it, exist a directory in it. 
-
-### <u>GUI/Window</u>
-Hold all of the window realted things, like inventory window. The scene for a general window is in the directory. Also, any extentions of it, exist a directory in it. 
-
-### <u>Items/Item</u>
-A directory for Item class.
-
-### <u>Items/Item Drop</u>
-A directory for item drop scene template.
-
-### <u>Items/Item Inventory</u>
-A directory for item inventory scene template.
-
-### <u>Player</u>
-Hold all of player realted things.
-
-### <u>Player/HUD</u>
-Hold all of player's HUD realted things.
-
-### <u>Player/Sprite</u>
-Hold all of player's sprite.
-
-### <u>Player/States</u>
-Hold all of player's states.
-
-### <u>Player/Windows</u>
-Hold all of player's windows.
-
-### <u>Projectiles/Projectile</u>
-A directory for projectile scene template.
-
-### <u>State Machine</u>
-A directory for State Machine and State scripts.
-
 | Directory | Explanation |
 |---|---|
+| Config | Hold all of the configuration files |
+| GUI | Hold all of the GUI realted things. |
+| GUI/Bar | Hold all of the bar realted things, like progress bar. The scene for a general bar is in the directory. Also, any extentions of it, exist a directory in it. |
+| GUI/Buttons  | Hold all of the button realted things, like close button. The scene for a general button is in the directory. Also, any extentions of it, exist a directory in it. |
+| GUI/Window | Hold all of the window realted things, like inventory window. The scene for a general window is in the directory. Also, any extentions of it, exist a directory in it. |
+| Items/Item | A directory for Item class. |
+| Items/Item Drop | A directory for item drop scene template. |
+| Items/Item Inventory | A directory for item inventory scene template. |
+| Player | Hold all of player realted things. |
+| Player/HUD | Hold all of player's HUD realted things. |
+| Player/Sprite | Hold all of player's sprite. |
+| Player/States | Hold all of player's states. |
+| Player/Windows | Hold all of player's windows. |
 | Projectiles/Projectile  | A directory for projectile scene template. |
 | State Machine  | A directory for State Machine and State scripts. |
 
