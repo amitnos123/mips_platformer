@@ -23,18 +23,18 @@ Project Structure
 Naming Structure
 ----------------
 
-| Name Of | Writing Type |
-|---|---|
-| Inner function variables  | [Camel Case](#camel_case) |
-| Script | [Snake Case](#snake_case) |
-| Scene | [Snake Case](#snake_case) |
-| Resource | [Snake Case](#snake_case) |
-| Function | [Snake Case](#snake_case) |
-| Function's arguments | [Snake Case](#snake_case) |
-| Signal | [Snake Case](#snake_case) |
-| Constants | [Other](#other) |
-| Export variable | [Other](#other) |
-| Directory | [Other](#other) |
+| Name Of | Writing Type | Comment |
+|---|---|---|
+| Inner function variables  | [Camel Case](#camel_case) |   |
+| Script | [Snake Case](#snake_case) |   |
+| Scene | [Snake Case](#snake_case) |   |
+| Resource | [Snake Case](#snake_case) |   |
+| Function | [Snake Case](#snake_case) |   |
+| Function's arguments | [Snake Case](#snake_case) |   |
+| Signal | [Snake Case](#snake_case) |   |
+| Constants | [Other](#other) | All uppercase and underscore between words. |
+| Export variable | [Other](#other) | All uppercase and underscore between words. |
+| Directory | [Other](#other) | Spacing between names, uppercase for each word. |
 
 ### <a name="camel_case"><u>Camel Case</u></a>
 * Inner function variables 
