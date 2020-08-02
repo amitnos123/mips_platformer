@@ -25,16 +25,16 @@ Naming Structure
 
 | Name Of | Writing Type | Note |
 |---|---|---|
-| Inner function variables  | [Camel Case](#camel_case) |   |
-| Script | [Snake Case](#snake_case) |   |
-| Scene | [Snake Case](#snake_case) |   |
-| Resource | [Snake Case](#snake_case) |   |
-| Function | [Snake Case](#snake_case) |   |
-| Function's arguments | [Snake Case](#snake_case) |   |
-| Signal | [Snake Case](#snake_case) |   |
-| Constants | [Other](#other) | All uppercase and underscore between words. |
-| Export variable | [Other](#other) | All uppercase and underscore between words. |
-| Directory | [Other](#other) | Spacing between names, uppercase for each word. |
+| Inner function variables  | Camel Case |   |
+| Script | Snake Case |   |
+| Scene | Snake Case |   |
+| Resource | Snake Case |   |
+| Function | Snake Case |   |
+| Function's arguments | Snake Case |   |
+| Signal | Snake Case |   |
+| Constants | Other | All uppercase and underscore between words. |
+| Export variable | Other | All uppercase and underscore between words. |
+| Directory | Other | Spacing between names, uppercase for each word. |
 
 ***
 
