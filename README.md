@@ -21,9 +21,31 @@ Content
 
 ### <u>GUI</u>
 
+### <u>GUI/Bar</u>
+
+### <u>GUI/Bar/Bar With Label</u>
+
+### <u>GUI/Buttons</u>
+
+### <u>GUI/Window</u>
+
 ### <u>Items</u>
 
+### <u>Items/Item</u>
+
+### <u>Items/Item Drop</u>
+
+### <u>Items/Item Item Inventory</u>
+
 ### <u>Player</u>
+
+### <u>Player/HUD</u>
+
+### <u>Player/Sprite</u>
+
+### <u>Player/States</u>
+
+### <u>Player/Windows</u>
 
 ### <u>Projectiles</u>
 
