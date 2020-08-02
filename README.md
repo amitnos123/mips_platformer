@@ -7,6 +7,17 @@ General Notes
 Project Structure
 -----------------
 
+### <u>Config</u>
+
+### <u>GUI</u>
+
+### <u>Items</u>
+
+### <u>Player</u>
+
+### <u>Projectiles</u>
+
+### <u>State Machine</u>
 ***
 
 Naming Structure
