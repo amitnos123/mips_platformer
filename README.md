@@ -24,21 +24,28 @@ Naming Structure
 ----------------
 
 ### <u>Camel Case</u>
-* 
+* Inner function variables 
 
 
 ### <u>Snake Case</u>
 * Script's name
 * Scene's name
 * Resource's name
-* function
-* signal
+* Function
+* Function's arguments
+* Signal
 
 
 ### <u>Other</u>
 * Constants - All uppercase and underscore between words.
 * Export variable - All uppercase and underscore between words.
 * Directory - Spacing between names, uppercase for each word.
+
+|   |   |
+|---|---|
+|   |   |
+|   |   |
+|   |   |
 
 ***
 
