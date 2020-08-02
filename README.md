@@ -23,7 +23,7 @@ Project Structure
 Naming Structure
 ----------------
 
-| Name Of | Writing Type | Comment |
+| Name Of | Writing Type | Note |
 |---|---|---|
 | Inner function variables  | [Camel Case](#camel_case) |   |
 | Script | [Snake Case](#snake_case) |   |
