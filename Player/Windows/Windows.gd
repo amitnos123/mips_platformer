@@ -1,8 +1,34 @@
 extends Control
 
+signal mouse_change_window(window_node)
+
+# The node which the mouse is on
+onready var mouse_on_window = null
+onready var windows_array = []
+
 func _ready():
+	var mouse_pos = get_global_mouse_position()
 	for window in get_children():
 		window.connect('move_to_top', self, 'move_window_to_top')
+		connect('mouse_change_window', window, '_on_mouse_change_window')
+		windows_array.push_back(window)
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		var in_window = false
+		for window in windows_array:
+			if(window.get_rect().has_point(event.position)):
+				in_window = true
+				if(mouse_on_window != window):
+					mouse_on_window = window
+					emit_signal('mouse_change_window', mouse_on_window)
+		if not in_window && mouse_on_window != null:
+			mouse_on_window = null
+			emit_signal('mouse_change_window', mouse_on_window)
 
 func move_window_to_top(node):
 	move_child(node, get_child_count() - 1)
+
+func add_window(window : Control):
+	window.connect('move_to_top', self, 'move_window_to_top')
+	windows_array.push_back(window)

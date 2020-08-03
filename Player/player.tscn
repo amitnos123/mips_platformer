@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/player_controller.gd" type="Script" id=1]
 [ext_resource path="res://Player/Sprite/player_animation.tres" type="SpriteFrames" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Player/States/Motion/In Air/fall.gd" type="Script" id=7]
 [ext_resource path="res://Player/States/Motion/In Air/jump.gd" type="Script" id=8]
 [ext_resource path="res://Player/HUD/player_hud.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Player/Windows/Inventory/player_inventory.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/lie_down.gd" type="Script" id=11]
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/crawl.gd" type="Script" id=12]
 [ext_resource path="res://Player/Windows/Windows.gd" type="Script" id=13]
@@ -87,17 +86,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerInventory" parent="Camera2D/HUD/Windows" instance=ExtResource( 10 )]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 300.0
-margin_bottom = 300.0
-
 [node name="WindowInventory" parent="Camera2D/HUD/Windows" instance=ExtResource( 14 )]
 visible = false
 margin_left = 97.0
@@ -111,3 +99,4 @@ rows = 2
 [connection signal="stop_lying_down" from="States/LieDown" to="." method="_on_stop_lying_down"]
 [connection signal="crawling" from="States/Crawl" to="." method="_on_crawl"]
 [connection signal="stop_lying_down" from="States/Crawl" to="." method="_on_stop_lying_down"]
+[connection signal="_on_item_drop" from="Camera2D/HUD/Windows/WindowInventory" to="." method="_on_WindowInventory_item_drop"]

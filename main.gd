@@ -7,4 +7,7 @@ func _ready():
 	var dropItem = instance.get_item_drop_node()
 	dropItem.set_position(Vector2(165, 279))
 	add_child(dropItem)
-	pass
+
+func _on_item_drop(item_drop_node):
+	item_drop_node.position = $player.position
+	add_child(item_drop_node)

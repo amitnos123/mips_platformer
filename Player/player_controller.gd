@@ -3,6 +3,7 @@ extends KinematicBody2D
 class_name Player
 
 signal direction_changed(new_direction)
+signal _on_item_drop(item_drop_node)
 
 var look_direction = Vector2(1, 0) setget set_look_direction
 
@@ -30,7 +31,6 @@ func _on_lie_down():
 	$CollisionBoxCrawl.disabled = true
 	
 	$AnimatedSprite.set_position(LIE_DOWN_POSITION) 
-	return
 
 func _on_crawl():
 	$CollisionBoxCrawl.disabled = false 
@@ -38,7 +38,6 @@ func _on_crawl():
 	$CollisionBoxLieDown.disabled = true
 	
 	$AnimatedSprite.set_position(CRAWL_POSITION)
-	return
 
 func _on_stop_lying_down():
 	$CollisionBox.disabled = false
@@ -46,7 +45,6 @@ func _on_stop_lying_down():
 	$CollisionBoxCrawl.disabled = true
 	
 	$AnimatedSprite.set_position(Vector2.ZERO) 
-	return
 
 func is_inventory_full():
 	return $Camera2D/HUD/Windows/WindowInventory.is_inventory_full()
@@ -54,3 +52,6 @@ func is_inventory_full():
 func add_item(itemData : Item):
 	print('is_item_null ', itemData == null)
 	print('is_inventory_full ', $Camera2D/HUD/Windows/WindowInventory.is_inventory_full())
+
+func _on_WindowInventory_item_drop(item_drop_node):
+	emit_signal('_on_item_drop', item_drop_node)

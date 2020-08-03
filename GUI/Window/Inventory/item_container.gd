@@ -4,6 +4,8 @@ class_name ItemContainer
 
 signal _on_select
 signal _on_unselect
+signal _on_dragged(container_id)
+signal _on_stop_drag(container_id)
 
 export(Color) var defaultColor : Color = Color.white
 export(Color) var selectColor : Color = Color.black
@@ -17,12 +19,13 @@ var is_preview_event_press = false
 func _ready():
 	self.set_self_modulate(defaultColor)
 	self.connect('gui_input', self, '_on_pressed')
+#	$ItemInventory.connect('_on_dragged', self, '_on_ItemInventory_dragged')
+#	$ItemInventory.connect('_on_stop_drag', self, '_on_ItemInventory_stop_drag')
 
 func _on_pressed(event):
 	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT:
 		if event.doubleclick:
 			print('doubleclick')
-			#self.selected = false
 		elif event.pressed:
 			is_preview_event_press = true
 		elif is_preview_event_press:
@@ -55,11 +58,14 @@ func set_itemData(value):
 func get_itemData():
 	return get_child(0).itemData
 
-func _on_ItemInventory_dragged():
+func remove_item():
+	get_child(0).remove_item()
+
+func _on_mouse_change_window(window_node):
 	pass
-	#print('_on_ItemInventory_dragged')
-	#print(selected)
-	#print(self.self_modulate)
-	#self.selected = !selected
-	#print(selected)
-	#print(self.self_modulate)
+
+func _on_ItemInventory_dragged(container_id):
+	emit_signal("_on_dragged",container_id)
+
+func _on_ItemInventory_stop_drag(container_id):
+	emit_signal("_on_stop_drag",container_id)

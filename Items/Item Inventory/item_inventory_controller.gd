@@ -1,17 +1,29 @@
 extends TextureRect
 
-signal dragged
+signal _on_dragged(container_id)
+signal _on_stop_drag(container_id)
 
 var itemData : Item = null setget set_itemData, get_itemData
+onready var is_mouse_over_window = false
+onready var is_dragged = false
 
 func _ready():
-	connect('dragged', get_parent(), "_on_ItemInventory_dragged")
+	connect('_on_dragged', get_parent(), '_on_ItemInventory_dragged')
+	connect('_on_stop_drag', get_parent(), '_on_ItemInventory_stop_drag')
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if Input.is_action_just_released("mouse1") && is_dragged:
+			is_dragged = false
+			emit_signal("_on_stop_drag", get_parent().container_id)
+#	._input(event)
 
 func get_drag_data(_pos):
 	if itemData == null:
 		return null
 	
-	emit_signal("dragged")
+	emit_signal("_on_dragged", get_parent().container_id)
+	is_dragged = true
 	
 	var tr = TextureRect.new()
 	tr.texture = self.texture
@@ -38,9 +50,11 @@ func drop_data(_pos, item_container):
 func set_itemData(value):
 	itemData = value
 	var inventoryScene = value.inventory_scene.instance()
-#	inventoryScene.connect()
 	replace_by(inventoryScene, true)
 
 func get_itemData():
 	return itemData
 
+func remove_item():
+	var emptyItemInventory = load('res://Items/Item Inventory/item_inventory.tscn')
+	replace_by(emptyItemInventory.instance(), false)
