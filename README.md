@@ -53,8 +53,8 @@ Content
 | Function | Snake Case |   |
 | Function's arguments | Snake Case |   |
 | Signal | Snake Case |   |
-| Constants | Other | All uppercase and underscore between words. |
-| Export variable | Other | All uppercase and underscore between words. |
+| Constants | Screaming Snake Case |   |
+| Export variable | Screaming Snake Case |   |
 | Directory | Other | Spacing between names, uppercase for each word. |
 
 ***
