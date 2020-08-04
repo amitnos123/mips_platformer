@@ -28,11 +28,11 @@ func set_look_direction(value):
 func is_inventory_full():
 	return $Camera2D/HUD/Windows/WindowInventory.is_full()
 
-func can_add_item(itemData : Item):
-	return $Camera2D/HUD/Windows/WindowInventory.can_add_item(itemData)
+func can_add_item(item_data : Item):
+	return $Camera2D/HUD/Windows/WindowInventory.can_add_item(item_data)
 
-func add_item(itemData : Item):
-	$Camera2D/HUD/Windows/WindowInventory.add_item(itemData)
+func add_item(item_data : Item):
+	$Camera2D/HUD/Windows/WindowInventory.add_item(item_data)
 
 func _on_lie_down():
 	$CollisionBoxLieDown.disabled = false

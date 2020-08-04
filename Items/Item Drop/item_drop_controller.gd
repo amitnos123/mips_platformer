@@ -1,17 +1,17 @@
 extends Area2D
 
-signal picked(itemData)
+signal picked(item_data)
 
-var itemData : Item = null
+var item_data : Item = null
 
-onready var playerInArea : Player = null
+onready var player_in_area : Player = null
 
 func _on_ItemDrop_body_entered(body):
 	if body is Player:
-		playerInArea = body
-		connect('picked', playerInArea, 'add_item')
+		player_in_area = body
+		connect('picked', player_in_area, 'add_item')
 
 func _on_ItemDrop_body_exited(body):
 	if body is Player:
-		playerInArea = null
-		disconnect('picked', playerInArea, 'add_item')
+		player_in_area = null
+		disconnect('picked', player_in_area, 'add_item')

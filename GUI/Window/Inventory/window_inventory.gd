@@ -30,12 +30,12 @@ func _ready():
 		connect('mouse_change_window', itemContainerNode, '_on_mouse_change_window')
 		$WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.add_child(itemContainerNode)
 
-func add_item(itemData : Item):
-#	if itemData is ItemQuantity:
+func add_item(item_data : Item):
+#	if item_data is ItemQuantity:
 #	else:
 	for itemContainerNode in $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_children():
-		if itemContainerNode.itemData == null:
-			itemContainerNode.itemData = itemData
+		if itemContainerNode.item_data == null:
+			itemContainerNode.item_data = item_data
 			break
 
 func remove_item(container_id):
@@ -45,9 +45,9 @@ func _on_ScrollContainer_gui_input(event):
 	.drag_window(event)
 
 func _on_item_container_select(container_id):
-	if not $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).itemData:
+	if not $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).item_data:
 		var itemInventoryTestNode = item_inventory_test.instance()
-		$WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).itemData = itemInventoryTestNode.itemData
+		$WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).item_data = itemInventoryTestNode.item_data
 
 func _on_item_container_unselect(container_id):
 	pass
@@ -59,15 +59,15 @@ func _on_item_container_unselect(container_id):
 func is_full():
 	pass
 #	for container in selectedItemsDictionary:
-#		if selectedItemsDictionary[container].itemData == null:
+#		if selectedItemsDictionary[container].item_data == null:
 #			return false
 #	return true
 
-func can_add_item(itemData : Item):
-#	if itemData is ItemQuantity:
+func can_add_item(item_data : Item):
+#	if item_data is ItemQuantity:
 #	else:
 	for itemContainerNode in $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_children():
-		if itemContainerNode.itemData == null:
+		if itemContainerNode.item_data == null:
 			return true
 	return false
 	
@@ -80,7 +80,7 @@ func _on_item_container_dragged(container_id):
 
 func _on_item_container_stop_drag(container_id):
 	if(mouse_in_window == null): # Drop item
-		var drop_item_node = $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).get_child(0).itemData.drop_scene.instance()
+		var drop_item_node = $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).get_child(0).item_data.drop_scene.instance()
 		emit_signal("item_drop", drop_item_node)
 		$WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).remove_item()
 		$WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).selected = false

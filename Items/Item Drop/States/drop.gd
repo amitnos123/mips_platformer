@@ -13,13 +13,13 @@ func exit():
 	return
 
 func handle_input(event):
-	if owner.playerInArea:
-		if owner.playerInArea.can_add_item(owner.itemData):
+	if owner.player_in_area:
+		if owner.player_in_area.can_add_item(owner.item_data):
 			if event.is_action_pressed("item_pick"):
 				emit_signal("finished", "picked")
 	return
 
-func _on_DespawnTimer_timeout():
+func _on_despawn_timer_timeout():
 	emit_signal("finished", "despawn")
 
 func _on_animation_finished():

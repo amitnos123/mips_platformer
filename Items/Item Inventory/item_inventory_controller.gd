@@ -3,7 +3,7 @@ extends TextureRect
 signal _on_dragged(container_id)
 signal _on_stop_drag(container_id)
 
-var itemData : Item = null setget set_itemData, get_itemData
+var item_data : Item = null setget set_item_data, get_item_data
 onready var is_mouse_over_window = false
 onready var is_dragged = false
 
@@ -19,7 +19,7 @@ func _input(event):
 #	._input(event)
 
 func get_drag_data(_pos):
-	if itemData == null:
+	if item_data == null:
 		return null
 	
 	emit_signal("_on_dragged", get_parent().container_id)
@@ -47,13 +47,13 @@ func drop_data(_pos, item_container):
 	item_inventory.replace_by(self.duplicate())
 	replace_by(item_inventory_duplicate)
 
-func set_itemData(value):
-	itemData = value
+func set_item_data(value):
+	item_data = value
 	var inventoryScene = value.inventory_scene.instance()
 	replace_by(inventoryScene, true)
 
-func get_itemData():
-	return itemData
+func get_item_data():
+	return item_data
 
 func remove_item():
 	var emptyItemInventory = load('res://Items/Item Inventory/item_inventory.tscn')

@@ -11,7 +11,7 @@ export(Color) var defaultColor : Color = Color.white
 export(Color) var selectColor : Color = Color.black
 
 onready var selected = false setget set_selected, is_selected
-onready var itemData setget set_itemData, get_itemData
+onready var item_data setget set_item_data, get_item_data
 
 var container_id
 var is_preview_event_press = false
@@ -51,12 +51,11 @@ func unselect():
 	self.self_modulate = defaultColor
 	emit_signal('_on_unselect', container_id)
 
-func set_itemData(value):
-	#print('set_itemData Container')
-	get_child(0).itemData = value
+func set_item_data(value):
+	get_child(0).item_data = value
 	
-func get_itemData():
-	return get_child(0).itemData
+func get_item_data():
+	return get_child(0).item_data
 
 func remove_item():
 	get_child(0).remove_item()

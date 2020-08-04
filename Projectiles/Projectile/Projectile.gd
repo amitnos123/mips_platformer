@@ -2,28 +2,27 @@ extends KinematicBody2D
 
 class_name projectile
 
-export(float) var timeToDespawn = 3
-export(float) var speed = 100 setget set_speed
-export(Vector2) var direction = Vector2.RIGHT setget set_direction
+export(float) var TIME_TO_DESPAWN = 3
+export(float) var SPEED = 100 setget set_speed
+export(Vector2) var DIRECTION = Vector2.RIGHT setget set_direction
 
 func _ready():
-	direction = direction.normalized()
-	$DespawnTimer.start(timeToDespawn)
+	DIRECTION = DIRECTION.normalized()
+	$DespawnTimer.start(TIME_TO_DESPAWN)
 	pass
 
 func _physics_process(delta):
-	var collision = move_and_collide(direction * speed * delta)
+	var collision = move_and_collide(DIRECTION * SPEED * delta)
 	if collision:
 		self.queue_free()
 
 func set_speed(value):
-	speed = value
+	SPEED = value
 	pass
 
 func set_direction(value):
-	direction = value.normalized()
+	DIRECTION = value.normalized()
 	pass
-
 
 func _on_DespawnTimer_timeout():
 	self.queue_free()

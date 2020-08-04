@@ -7,4 +7,4 @@ export(PackedScene) var dropScene : PackedScene = load('res://Items/Item Test/It
 export(PackedScene) var inventoryScene : PackedScene = load('res://Items/Item Test/Item Inventory Test/ItemInventoryTest.tscn')
 
 func _init():
-	itemData = Item.new(code, generated_code, itemName, dropScene, inventoryScene)
+	item_data = Item.new(code, generated_code, itemName, dropScene, inventoryScene)

@@ -5,7 +5,6 @@
 
 [node name="WindowInventory" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
-rows = 16
 
 [node name="InventoryScrollContainer" type="ScrollContainer" parent="WindowContainer/WindowBackground" index="1"]
 anchor_right = 1.0
