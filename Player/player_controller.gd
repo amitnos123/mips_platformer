@@ -25,6 +25,15 @@ func set_look_direction(value):
 	elif value.x == Vector2.LEFT.x:
 		$AnimatedSprite.flip_h = true
 
+func is_inventory_full():
+	return $Camera2D/HUD/Windows/WindowInventory.is_full()
+
+func can_add_item(itemData : Item):
+	return $Camera2D/HUD/Windows/WindowInventory.can_add_item(itemData)
+
+func add_item(itemData : Item):
+	$Camera2D/HUD/Windows/WindowInventory.add_item(itemData)
+
 func _on_lie_down():
 	$CollisionBoxLieDown.disabled = false
 	$CollisionBox.disabled = true
@@ -45,13 +54,6 @@ func _on_stop_lying_down():
 	$CollisionBoxCrawl.disabled = true
 	
 	$AnimatedSprite.set_position(Vector2.ZERO) 
-
-func is_inventory_full():
-	return $Camera2D/HUD/Windows/WindowInventory.is_inventory_full()
-
-func add_item(itemData : Item):
-	print('is_item_null ', itemData == null)
-	print('is_inventory_full ', $Camera2D/HUD/Windows/WindowInventory.is_inventory_full())
 
 func _on_WindowInventory_item_drop(item_drop_node):
 	emit_signal('_on_item_drop', item_drop_node)

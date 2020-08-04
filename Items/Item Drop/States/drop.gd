@@ -14,7 +14,7 @@ func exit():
 
 func handle_input(event):
 	if owner.playerInArea:
-		if not owner.playerInArea.is_inventory_full():
+		if owner.playerInArea.can_add_item(owner.itemData):
 			if event.is_action_pressed("item_pick"):
 				emit_signal("finished", "picked")
 	return

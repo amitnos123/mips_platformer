@@ -30,8 +30,13 @@ func _ready():
 		connect('mouse_change_window', itemContainerNode, '_on_mouse_change_window')
 		$WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.add_child(itemContainerNode)
 
-func add_item():
-	pass
+func add_item(itemData : Item):
+#	if itemData is ItemQuantity:
+#	else:
+	for itemContainerNode in $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_children():
+		if itemContainerNode.itemData == null:
+			itemContainerNode.itemData = itemData
+			break
 
 func remove_item(container_id):
 	pass
@@ -51,13 +56,21 @@ func _on_itemContainer_unselect(container_id):
 #	var deleteNode = $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).get_child(0)
 #	$WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).remove_child(deleteNode)
 
-func is_inventory_full():
+func is_full():
 	pass
 #	for container in selectedItemsDictionary:
 #		if selectedItemsDictionary[container].itemData == null:
 #			return false
 #	return true
 
+func can_add_item(itemData : Item):
+#	if itemData is ItemQuantity:
+#	else:
+	for itemContainerNode in $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_children():
+		if itemContainerNode.itemData == null:
+			return true
+	return false
+	
 func _on_mouse_change_window(window_node):
 	mouse_in_window = window_node
 	emit_signal('mouse_change_window', window_node)
