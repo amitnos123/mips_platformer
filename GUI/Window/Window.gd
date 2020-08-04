@@ -7,16 +7,16 @@ onready var drag_position : Vector2 = Vector2.ZERO
 func _ready():
 	pass
 
-func _on_CloseButton_pressed():
+func _on_close_button_pressed():
 	self.set_visible(false)
 
-func _on_ClickLabelAlert_gui_input(event):
+func _on_click_label_alert_gui_input(event):
 	drag_window(event)
 
-func _on_WindowContainer_gui_input(event):
+func _on_window_container_gui_input(event):
 	drag_window(event)
 
-func _on_WindowBackground_gui_input(event):
+func _on_window_background_gui_input(event):
 	drag_window(event)
 
 func drag_window(event):
