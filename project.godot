@@ -25,7 +25,7 @@ _global_script_classes=[ {
 "path": "res://Player/player_controller.gd"
 }, {
 "base": "KinematicBody2D",
-"class": "projectile",
+"class": "Projectile",
 "language": "GDScript",
 "path": "res://Projectiles/Projectile/Projectile.gd"
 } ]
@@ -33,7 +33,7 @@ _global_script_class_icons={
 "Item": "",
 "ItemContainer": "",
 "Player": "",
-"projectile": ""
+"Projectile": ""
 }
 
 [application]

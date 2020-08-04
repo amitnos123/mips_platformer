@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-class_name projectile
+class_name Projectile
 
 export(float) var TIME_TO_DESPAWN = 3
 export(float) var SPEED = 100 setget set_speed
@@ -24,5 +24,5 @@ func set_direction(value):
 	DIRECTION = value.normalized()
 	pass
 
-func _on_DespawnTimer_timeout():
+func _on_despawn_timer_timeout():
 	self.queue_free()
