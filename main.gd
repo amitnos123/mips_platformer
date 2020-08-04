@@ -8,6 +8,6 @@ func _ready():
 	dropItem.set_position(Vector2(165, 279))
 	add_child(dropItem)
 
-func _on_item_drop(item_drop_node):
-	item_drop_node.position = $player.position
+func _on_item_drop(item_drop_node, position : Vector2):
+	item_drop_node.position = position
 	add_child(item_drop_node)

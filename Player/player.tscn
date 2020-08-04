@@ -92,11 +92,9 @@ margin_left = 97.0
 margin_top = 8.0
 margin_right = 465.0
 margin_bottom = 353.0
-columns = 2
-rows = 2
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]
 [connection signal="lying_down" from="States/LieDown" to="." method="_on_lie_down"]
 [connection signal="stop_lying_down" from="States/LieDown" to="." method="_on_stop_lying_down"]
 [connection signal="crawling" from="States/Crawl" to="." method="_on_crawl"]
 [connection signal="stop_lying_down" from="States/Crawl" to="." method="_on_stop_lying_down"]
-[connection signal="_on_item_drop" from="Camera2D/HUD/Windows/WindowInventory" to="." method="_on_WindowInventory_item_drop"]
+[connection signal="item_drop" from="Camera2D/HUD/Windows/WindowInventory" to="." method="_on_window_inventory_item_drop"]

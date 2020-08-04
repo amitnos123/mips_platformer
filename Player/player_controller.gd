@@ -3,7 +3,7 @@ extends KinematicBody2D
 class_name Player
 
 signal direction_changed(new_direction)
-signal _on_item_drop(item_drop_node)
+signal item_drop(item_drop_node)
 
 var look_direction = Vector2(1, 0) setget set_look_direction
 
@@ -52,8 +52,7 @@ func _on_stop_lying_down():
 	$CollisionBox.disabled = false
 	$CollisionBoxLieDown.disabled = true
 	$CollisionBoxCrawl.disabled = true
-	
 	$AnimatedSprite.set_position(Vector2.ZERO) 
 
-func _on_WindowInventory_item_drop(item_drop_node):
-	emit_signal('_on_item_drop', item_drop_node)
+func _on_window_inventory_item_drop(item_drop_node):
+	emit_signal('item_drop', item_drop_node, self.position)
