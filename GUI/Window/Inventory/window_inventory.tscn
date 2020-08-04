@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://GUI/Window/Inventory/window_inventory.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Window/window.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GUI/Window/Inventory/InventoryScrollContainer.gd" type="Script" id=3]
 
 [node name="WindowInventory" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
@@ -15,7 +14,6 @@ margin_top = 36.0
 margin_right = -10.0
 margin_bottom = -10.0
 scroll_horizontal_enabled = false
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

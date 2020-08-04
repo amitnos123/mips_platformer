@@ -10,12 +10,16 @@ export(Color) var SELECT_COLOR : Color = Color.forestgreen
 export(int) var COLUMNS : int = 4
 export(int) var ROWS : int = 4
 
+export(Vector2) var SCROLLBAR_MIN_RECT_SIZE : Vector2 = Vector2(15,0)
+
 export(PackedScene) var ITEM_CONTAINER : PackedScene = preload('res://GUI/Window/Inventory/item_container.tscn')
 
 onready var item_inventory_test = preload('res://Items/Item Test/Item Inventory Test/item_inventory_test.tscn')
 onready var mouse_in_window = null
 
 func _ready():
+	$WindowContainer/WindowBackground/InventoryScrollContainer.get_v_scrollbar().rect_min_size = SCROLLBAR_MIN_RECT_SIZE
+	
 	for index in range(COLUMNS * ROWS):
 		var itemContainerNode = ITEM_CONTAINER.instance()
 		itemContainerNode.defaultColor = DEFAULT_COLOR
