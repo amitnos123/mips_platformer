@@ -55,6 +55,7 @@ Content
 | Signal | Snake Case |   |
 | Constants | Screaming Snake Case |   |
 | Export variable | Screaming Snake Case |   |
+| Node's Name | Pascal Case |   |
 | Directory | Other | Spacing between names, uppercase for each word. |
 
 ***
