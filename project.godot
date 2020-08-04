@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Projectile",
 "language": "GDScript",
-"path": "res://Projectiles/Projectile/Projectile.gd"
+"path": "res://Projectiles/Projectile/projectile.gd"
 } ]
 _global_script_class_icons={
 "Item": "",
@@ -44,7 +44,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Constants="*res://Config/Constants.gd"
+Constants="*res://Config/constants.gd"
 
 [cursor]
 

@@ -12,7 +12,7 @@ export(int) var ROWS : int = 4
 
 export(PackedScene) var ITEM_CONTAINER : PackedScene = preload('res://GUI/Window/Inventory/item_container.tscn')
 
-onready var item_inventory_test = preload('res://Items/Item Test/Item Inventory Test/ItemInventoryTest.tscn')
+onready var item_inventory_test = preload('res://Items/Item Test/Item Inventory Test/item_inventory_test.tscn')
 onready var mouse_in_window = null
 
 func _ready():

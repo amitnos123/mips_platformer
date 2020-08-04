@@ -13,7 +13,7 @@ export(Color) var selectColor : Color = Color.black
 onready var selected = false setget set_selected, is_selected
 onready var item_data setget set_item_data, get_item_data
 
-var container_id
+var container_id = null
 var is_preview_event_press = false
 
 func _ready():

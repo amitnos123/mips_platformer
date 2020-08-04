@@ -3,8 +3,8 @@ extends Node
 export(int) var code
 export(int) var generated_code
 export(String) var itemName : String
-export(PackedScene) var dropScene : PackedScene = load('res://Items/Item Test/Item Drop Test/ItemDropTest.tscn') setget ,get_item_drop_node
-export(PackedScene) var inventoryScene : PackedScene = load('res://Items/Item Test/Item Inventory Test/ItemInventoryTest.tscn') setget ,get_item_inventory_node
+export(PackedScene) var dropScene : PackedScene = load('res://Items/Item Test/Item Drop Test/item_drop_test.tscn') setget ,get_item_drop_node
+export(PackedScene) var inventoryScene : PackedScene = load('res://Items/Item Test/Item Inventory Test/item_inventory_test.tscn') setget ,get_item_inventory_node
 
 var item_data : Item
 

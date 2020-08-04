@@ -9,10 +9,10 @@
 [ext_resource path="res://Player/States/Motion/In Air/fall.gd" type="Script" id=7]
 [ext_resource path="res://Player/States/Motion/In Air/jump.gd" type="Script" id=8]
 [ext_resource path="res://Player/HUD/player_hud.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/HUD/Windows/Inventory/player_inventory.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/lie_down.gd" type="Script" id=11]
 [ext_resource path="res://Player/States/Motion/On Ground/Lying/crawl.gd" type="Script" id=12]
-[ext_resource path="res://Player/Windows/Windows.gd" type="Script" id=13]
-[ext_resource path="res://GUI/Window/Inventory/window_inventory.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Player/Windows/windows.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 8 )
@@ -86,15 +86,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WindowInventory" parent="Camera2D/HUD/Windows" instance=ExtResource( 14 )]
-visible = false
-margin_left = 97.0
-margin_top = 8.0
-margin_right = 465.0
-margin_bottom = 353.0
+[node name="PlayerInventory" parent="Camera2D/HUD/Windows" instance=ExtResource( 10 )]
+margin_right = 345.0
+margin_bottom = 300.0
+ROWS = 20
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]
 [connection signal="lying_down" from="States/LieDown" to="." method="_on_lie_down"]
 [connection signal="stop_lying_down" from="States/LieDown" to="." method="_on_stop_lying_down"]
 [connection signal="crawling" from="States/Crawl" to="." method="_on_crawl"]
 [connection signal="stop_lying_down" from="States/Crawl" to="." method="_on_stop_lying_down"]
-[connection signal="item_drop" from="Camera2D/HUD/Windows/WindowInventory" to="." method="_on_window_inventory_item_drop"]
+[connection signal="item_drop" from="Camera2D/HUD/Windows/PlayerInventory" to="." method="_on_window_inventory_item_drop"]

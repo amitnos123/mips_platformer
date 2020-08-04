@@ -7,15 +7,17 @@ signal item_drop(item_drop_node)
 
 var look_direction = Vector2(1, 0) setget set_look_direction
 
+onready var inventory_node_path = $Camera2D/HUD/Windows/PlayerInventory
+
 export(Vector2) var LIE_DOWN_POSITION = Vector2.DOWN * 2
 export(Vector2) var CRAWL_POSITION = Vector2.DOWN * 5
 
 func _unhandled_input(event):
 	if event.is_action_pressed("toggle_window_player_inventory"):
-		if $Camera2D/HUD/Windows/WindowInventory.is_visible():
-			$Camera2D/HUD/Windows/WindowInventory.set_visible(false)
+		if inventory_node_path.is_visible():
+			inventory_node_path.set_visible(false)
 		else:
-			$Camera2D/HUD/Windows/WindowInventory.set_visible(true)
+			inventory_node_path.set_visible(true)
 	
 func set_look_direction(value):
 	look_direction = value
@@ -26,13 +28,13 @@ func set_look_direction(value):
 		$AnimatedSprite.flip_h = true
 
 func is_inventory_full():
-	return $Camera2D/HUD/Windows/WindowInventory.is_full()
+	return inventory_node_path.is_full()
 
 func can_add_item(item_data : Item):
-	return $Camera2D/HUD/Windows/WindowInventory.can_add_item(item_data)
+	return inventory_node_path.can_add_item(item_data)
 
 func add_item(item_data : Item):
-	$Camera2D/HUD/Windows/WindowInventory.add_item(item_data)
+	inventory_node_path.add_item(item_data)
 
 func _on_lie_down():
 	$CollisionBoxLieDown.disabled = false
