@@ -53,8 +53,10 @@ Content
 | Function | Snake Case |   |
 | Function's arguments | Snake Case |   |
 | Signal | Snake Case |   |
+| files' name | Snake Case |   |
 | Constants | Screaming Snake Case |   |
 | Export variable | Screaming Snake Case |   |
+| Class | Pascal Case |   |
 | Node's Name | Pascal Case |   |
 | Directory | Other | Spacing between names, uppercase for each word. |
 
