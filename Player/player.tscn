@@ -88,7 +88,7 @@ __meta__ = {
 
 [node name="PlayerInventory" parent="Camera2D/HUD/Windows" instance=ExtResource( 10 )]
 visible = false
-margin_right = 345.0
+margin_right = 295.0
 margin_bottom = 300.0
 ROWS = 20
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]
