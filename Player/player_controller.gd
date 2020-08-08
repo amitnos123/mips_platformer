@@ -18,7 +18,10 @@ func _unhandled_input(event):
 			inventory_node_path.set_visible(false)
 		else:
 			inventory_node_path.set_visible(true)
-	
+
+# Set the look direction of the player
+# @param {Vector2} value - Vector2 of the direction which the player will look
+# @returns {void}
 func set_look_direction(value):
 	look_direction = value
 	emit_signal("direction_changed", value)
@@ -26,7 +29,9 @@ func set_look_direction(value):
 		$AnimatedSprite.flip_h = false
 	elif value.x == Vector2.LEFT.x:
 		$AnimatedSprite.flip_h = true
-
+		
+# Return if the player's inventory is full
+# @returns {bool} - If the player's inventory is full
 func is_inventory_full():
 	return inventory_node_path.is_full()
 
