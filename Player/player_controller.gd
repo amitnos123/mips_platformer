@@ -49,7 +49,7 @@ func _on_lie_down():
 	$AnimatedSprite.set_position(LIE_DOWN_POSITION) 
 
 func _on_crawl():
-	$CollisionBoxCrawl.disabled = false 
+	$CollisionBoxCrawl.disabled = false
 	$CollisionBox.disabled = true
 	$CollisionBoxLieDown.disabled = true
 	
