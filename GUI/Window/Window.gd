@@ -1,5 +1,7 @@
 extends Control
 
+class_name Window
+
 signal move_to_top
 
 onready var drag_position : Vector2 = Vector2.ZERO

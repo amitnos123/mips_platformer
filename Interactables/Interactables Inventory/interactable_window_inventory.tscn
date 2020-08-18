@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Interactables/Interactables Inventory/interactable_window_inventory.gd" type="Script" id=1]
+[ext_resource path="res://GUI/Window/Inventory/window_inventory.tscn" type="PackedScene" id=2]
+
+[node name="InteractableWindowInventory" instance=ExtResource( 2 )]
+script = ExtResource( 1 )

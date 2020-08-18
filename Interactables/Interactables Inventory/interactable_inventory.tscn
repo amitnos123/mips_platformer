@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://objects.png" type="Texture" id=1]
+[ext_resource path="res://Interactables/Interactables Inventory/interactable_inventory.gd" type="Script" id=2]
+[ext_resource path="res://Interactables/Interactables Inventory/interactable_window_inventory.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Interactables/interactable.tscn" type="PackedScene" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 32, 128, 32, 25 )
+
+[node name="InteractableTest" instance=ExtResource( 4 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+scale = Vector2( 2, 2 )
+texture = SubResource( 1 )
+
+[node name="InteractableWindowInventory" parent="." index="2" instance=ExtResource( 3 )]
+visible = false
+margin_right = 500.0
+margin_bottom = 500.0

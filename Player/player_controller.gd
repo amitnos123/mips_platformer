@@ -8,6 +8,7 @@ signal item_drop(item_drop_node)
 var look_direction = Vector2(1, 0) setget set_look_direction
 
 onready var inventory_node_path = $Camera2D/HUD/Windows/PlayerInventory
+onready var windows_node_path = $Camera2D/HUD/Windows
 
 export(Vector2) var LIE_DOWN_POSITION = Vector2.DOWN * 2
 export(Vector2) var CRAWL_POSITION = Vector2.DOWN * 5
@@ -40,6 +41,11 @@ func can_add_item(item_data : Item):
 
 func add_item(item_data : Item):
 	inventory_node_path.add_item(item_data)
+
+func add_window(window_node : Window):
+	if window_node.get_parent():
+		window_node.get_parent().remove_child(window_node)
+	windows_node_path.add_child(window_node)
 
 func _on_lie_down():
 	$CollisionBoxLieDown.disabled = false

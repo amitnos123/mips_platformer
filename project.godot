@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "WindowInventory",
+"class": "InteractableWindowInventory",
+"language": "GDScript",
+"path": "res://Interactables/Interactables Inventory/interactable_window_inventory.gd"
+}, {
 "base": "Node",
 "class": "Item",
 "language": "GDScript",
@@ -28,12 +33,25 @@ _global_script_classes=[ {
 "class": "Projectile",
 "language": "GDScript",
 "path": "res://Projectiles/Projectile/projectile.gd"
+}, {
+"base": "Control",
+"class": "Window",
+"language": "GDScript",
+"path": "res://GUI/Window/window.gd"
+}, {
+"base": "Window",
+"class": "WindowInventory",
+"language": "GDScript",
+"path": "res://GUI/Window/Inventory/window_inventory.gd"
 } ]
 _global_script_class_icons={
+"InteractableWindowInventory": "",
 "Item": "",
 "ItemContainer": "",
 "Player": "",
-"Projectile": ""
+"Projectile": "",
+"Window": "",
+"WindowInventory": ""
 }
 
 [application]
