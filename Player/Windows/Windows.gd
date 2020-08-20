@@ -30,6 +30,8 @@ func _input(event):
 func _on_move_window_to_top(node):
 	move_child(node, get_child_count() - 1)
 
-func add_window(window : Control):
+func add_window(window : Window):
 	window.connect('move_to_top', self, '_on_move_window_to_top')
+	connect('mouse_change_window', window, '_on_mouse_change_window')
 	windows_array.push_back(window)
+	add_child(window)

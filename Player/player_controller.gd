@@ -45,7 +45,7 @@ func add_item(item_data : Item):
 func add_window(window_node : Window):
 	if window_node.get_parent():
 		window_node.get_parent().remove_child(window_node)
-	windows_node_path.add_child(window_node)
+	windows_node_path.add_window(window_node)
 
 func _on_lie_down():
 	$CollisionBoxLieDown.disabled = false

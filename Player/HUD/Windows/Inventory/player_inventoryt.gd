@@ -1,4 +1,6 @@
-extends "res://GUI/Window/Inventory/window_inventory.gd"
+extends WindowInventory
+
+class_name PlayerInventory
 
 func _ready():
 	pass

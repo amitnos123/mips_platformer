@@ -19,5 +19,8 @@ texture = SubResource( 1 )
 
 [node name="InteractableWindowInventory" parent="." index="2" instance=ExtResource( 3 )]
 visible = false
-margin_right = 500.0
-margin_bottom = 500.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 349.0
+margin_bottom = 322.0
+DEFAULT_LABEL_TEXT = "Interactable Window Inventory"

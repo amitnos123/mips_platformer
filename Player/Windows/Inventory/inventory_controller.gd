@@ -1,4 +1,4 @@
-extends "res://GUI/Window/Window.gd"
+extends Window
 
 onready var mouse_in_item_list : bool = false
 

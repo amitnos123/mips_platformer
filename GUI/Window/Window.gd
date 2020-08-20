@@ -1,13 +1,24 @@
+tool
 extends Control
 
 class_name Window
 
 signal move_to_top
 
+export var DEFAULT_LABEL_TEXT = 'label'
+
+onready var label_text setget set_label, get_label
+onready var label_node_path = $WindowContainer/WindowBackground/Label
 onready var drag_position : Vector2 = Vector2.ZERO
 
 func _ready():
-	pass
+	self.label_text = DEFAULT_LABEL_TEXT
+
+func set_label(value):
+	label_node_path.text = value
+
+func get_label():
+	return label_node_path.text
 
 func _on_close_button_pressed():
 	self.set_visible(false)
