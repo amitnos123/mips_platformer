@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://Interactables/interactable.gd"
+}, {
+"base": "Interactable",
+"class": "InteractableInventory",
+"language": "GDScript",
+"path": "res://Interactables/Interactables Inventory/interactable_inventory.gd"
+}, {
 "base": "WindowInventory",
 "class": "InteractableWindowInventory",
 "language": "GDScript",
@@ -50,6 +60,8 @@ _global_script_classes=[ {
 "path": "res://GUI/Window/Inventory/window_inventory.gd"
 } ]
 _global_script_class_icons={
+"Interactable": "",
+"InteractableInventory": "",
 "InteractableWindowInventory": "",
 "Item": "",
 "ItemContainer": "",

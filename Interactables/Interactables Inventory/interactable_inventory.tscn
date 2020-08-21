@@ -10,7 +10,7 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 32, 128, 32, 25 )
 
-[node name="InteractableTest" instance=ExtResource( 4 )]
+[node name="InteractableInventory" instance=ExtResource( 4 )]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
@@ -19,8 +19,6 @@ texture = SubResource( 1 )
 
 [node name="InteractableWindowInventory" parent="." index="2" instance=ExtResource( 3 )]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_right = 349.0
 margin_bottom = 322.0
 DEFAULT_LABEL_TEXT = "Interactable Window Inventory"

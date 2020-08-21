@@ -29,6 +29,14 @@ position = Vector2( 377, 294 )
 
 [node name="InteractableTest" parent="." instance=ExtResource( 6 )]
 position = Vector2( 862, 296 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="item_drop" from="player" to="." method="_on_item_drop"]
 [connection signal="body_entered" from="ItemDropTest" to="ItemDropTest/States/Drop" method="_on_body_entered"]
 [connection signal="body_exited" from="ItemDropTest" to="ItemDropTest/States/Drop" method="_on_body_exited"]
+[connection signal="input_event" from="InteractableTest" to="InteractableTest" method="_on_Interactable_input_event"]

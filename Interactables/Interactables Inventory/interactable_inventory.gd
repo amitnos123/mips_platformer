@@ -1,4 +1,6 @@
-extends "res://Interactables/interactable.gd"
+extends Interactable
+
+class_name InteractableInventory
 
 signal open_inventory(inventory_node)
 
