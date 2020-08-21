@@ -7,6 +7,8 @@ func _ready():
 	var dropItem = instance.get_item_drop_node()
 	dropItem.set_position(Vector2(165, 279))
 	add_child(dropItem)
+	print(Vector2.ZERO + Vector2.RIGHT + Vector2.UP)
+	print(Vector2.ZERO + Vector2.LEFT + Vector2.DOWN)
 
 # Trigger when dropping item on the ground
 # @param {Node2D} item_drop_node - The item's drop node which is dropped
