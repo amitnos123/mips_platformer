@@ -1,4 +1,4 @@
-extends "res://Items/Item Inventory/item_inventory_controller.gd"
+extends ItemInventory
 
 export(int) var code
 export(int) var generated_code

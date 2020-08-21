@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name ItemDrop
+
 signal picked(item_data)
 
 var item_data : Item = null

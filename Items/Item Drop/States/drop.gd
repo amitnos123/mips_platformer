@@ -1,4 +1,4 @@
-extends "res://State Machine/state.gd"
+extends State
 
 export(float) var DESPAWN_TIME = 60
 

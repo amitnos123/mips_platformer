@@ -1,4 +1,5 @@
-extends "res://State Machine/state.gd"
+#extends "res://State Machine/state.gd"
+extends State
 
 #export(NodePath) var STATE_COLLISION_BOX
 

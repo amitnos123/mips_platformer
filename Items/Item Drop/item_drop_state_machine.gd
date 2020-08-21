@@ -1,4 +1,4 @@
-extends "res://State Machine/state_machine.gd"
+extends StateMachine
 
 func _ready():
 	states_map = {

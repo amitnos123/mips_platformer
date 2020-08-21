@@ -1,5 +1,7 @@
 extends TextureRect
 
+class_name ItemInventory
+
 signal _on_dragged(container_id)
 signal _on_stop_drag(container_id)
 

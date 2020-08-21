@@ -1,4 +1,4 @@
-extends "res://Items/Item Drop/item_drop_controller.gd"
+extends ItemDrop
 
 export(int) var CODE
 export(int) var GENERATED_CODE
