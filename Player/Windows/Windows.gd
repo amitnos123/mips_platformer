@@ -33,5 +33,9 @@ func _on_move_window_to_top(node):
 func add_window(window : Window):
 	window.connect('move_to_top', self, '_on_move_window_to_top')
 	connect('mouse_change_window', window, '_on_mouse_change_window')
+	
+	if window is WindowInventory:
+		window.connect('item_drop', owner, '_on_window_inventory_item_drop')
+	
 	windows_array.push_back(window)
 	add_child(window)
