@@ -20,21 +20,36 @@ func set_label(value):
 func get_label():
 	return label_node_path.text
 
+# Called when the close button is pressed
+# @param {InputEvent} event - The client's gui input
+# @returns {void}
 func _on_close_button_pressed():
 	self.set_visible(false)
 
+# Called when the label is pressed
+# @param {InputEvent} event - The client's gui input
+# @returns {void}
 func _on_click_label_alert_gui_input(event):
 	drag_window(event)
 
+# Called when there is an GUI input in the window container
+# @param {InputEvent} event - The client's gui input
+# @returns {void}
 func _on_window_container_gui_input(event):
 	drag_window(event)
 
+# Called when there is an GUI input in the window background
+# @param {InputEvent} event - The client's gui input
+# @returns {void}
 func _on_window_background_gui_input(event):
 	drag_window(event)
 
+# Called when there is an GUI input anywhere in the window
+# @param {InputEvent} event - The client's gui input
+# @returns {void}
 func drag_window(event):
 	if event is InputEventMouseButton:
-		if event.pressed:
+		if event.pressed && event.button_index == BUTTON_LEFT:
 			drag_position = get_local_mouse_position()
 			emit_signal('move_to_top', self)
 		else:
