@@ -1,7 +1,7 @@
 tool
 extends Control
 
-class_name Window
+class_name Window, 'res://GUI/Window/window_icon.png'
 
 signal move_to_top
 
@@ -10,6 +10,7 @@ export var DEFAULT_LABEL_TEXT = 'label'
 onready var label_text setget set_label, get_label
 onready var label_node_path = $WindowContainer/WindowBackground/Label
 onready var drag_position : Vector2 = Vector2.ZERO
+onready var mouse_in_window : Window = null
 
 func _ready():
 	self.label_text = DEFAULT_LABEL_TEXT
@@ -57,3 +58,10 @@ func drag_window(event):
 			
 	if event is InputEventMouse and drag_position.length() != 0:
 		rect_global_position += get_local_mouse_position() - drag_position
+
+# Called when there is a change in which window the mouse is in
+# @param {Window} window_node - The window's node
+# @returns {void}
+func _on_mouse_change_window(window_node : Window):
+	mouse_in_window = window_node
+	emit_signal('mouse_change_window', window_node)

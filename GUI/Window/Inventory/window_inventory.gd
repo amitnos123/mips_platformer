@@ -1,7 +1,6 @@
-#tool
 extends Window
 
-class_name WindowInventory
+class_name WindowInventory, 'res://GUI/Window/Inventory/window_inventory_icon.png'
 
 signal mouse_change_window(window_node)
 signal item_drop(item_drop_node)
@@ -17,7 +16,6 @@ export(Vector2) var SCROLLBAR_MIN_RECT_SIZE : Vector2 = Vector2(15,0)
 export(PackedScene) var ITEM_CONTAINER : PackedScene = preload('res://GUI/Window/Inventory/item_container.tscn')
 
 onready var item_inventory_test : PackedScene = preload('res://Items/Item Test/Item Inventory Test/item_inventory_test.tscn')
-onready var mouse_in_window : Window = null
 onready var item_grid_container_node : GridContainer = $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer
 
 func _ready():
@@ -81,10 +79,6 @@ func can_add_item(item_data : Item):
 		if itemContainerNode.item_data == null:
 			return true
 	return false
-	
-func _on_mouse_change_window(window_node):
-	mouse_in_window = window_node
-	emit_signal('mouse_change_window', window_node)
 
 func _on_item_container_dragged(container_id):
 	pass

@@ -92,7 +92,7 @@ _global_script_class_icons={
 "Projectile": "",
 "State": "",
 "StateMachine": "",
-"Window": "",
+"Window": "res://GUI/Window/window_icon.png",
 "WindowInventory": ""
 }
 

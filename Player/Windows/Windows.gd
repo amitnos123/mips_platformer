@@ -13,7 +13,7 @@ func _ready():
 		connect('mouse_change_window', window, '_on_mouse_change_window')
 		windows_array.push_back(window)
 
-func _gui_input(event):
+func _input(event):
 	if event is InputEventMouseMotion:
 		var in_window = false
 		for window in windows_array:
