@@ -1,6 +1,6 @@
 extends Node
 
-class_name State
+class_name State, 'res://State Machine/state_icon.png'
 
 signal finished(next_state_name)
 

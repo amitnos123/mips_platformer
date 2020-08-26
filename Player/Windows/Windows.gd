@@ -27,10 +27,16 @@ func _input(event):
 			mouse_on_window = null
 			emit_signal('mouse_change_window', mouse_on_window)
 
-func _on_move_window_to_top(window):
+# Place a window on the top
+# @param {Window} window - The window node
+# @returns {void}
+func _on_move_window_to_top(window : Window):
 	move_child(window, get_child_count() - 1)
 
-func add_window(window : Window):
+# Add a window for the player and place it on the top
+# @param {Window} window - The window node which will be added
+# @returns {void}
+func add_window(window : Window) -> void:
 	window.connect('move_to_top', self, '_on_move_window_to_top')
 	connect('mouse_change_window', window, '_on_mouse_change_window')
 	

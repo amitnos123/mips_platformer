@@ -1,6 +1,6 @@
 extends Node
 
-class_name StateMachine
+class_name StateMachine, 'res://State Machine/state_machine_icon.png'
 
 signal state_changed(current_state)
 

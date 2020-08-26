@@ -90,8 +90,8 @@ _global_script_class_icons={
 "Player": "",
 "PlayerInventory": "",
 "Projectile": "",
-"State": "",
-"StateMachine": "",
+"State": "res://State Machine/state_icon.png",
+"StateMachine": "res://State Machine/state_machine_icon.png",
 "Window": "res://GUI/Window/window_icon.png",
 "WindowInventory": ""
 }
