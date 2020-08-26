@@ -1,6 +1,6 @@
 extends Window
 
-class_name WindowInventory, 'res://GUI/Window/Inventory/window_inventory_icon.png'
+class_name WindowInventory
 
 signal mouse_change_window(window_node)
 signal item_drop(item_drop_node)

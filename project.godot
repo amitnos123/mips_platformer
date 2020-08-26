@@ -100,11 +100,14 @@ _global_script_class_icons={
 
 config/name="my_platformer_with_github"
 run/main_scene="res://main.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="save_and_load"
 config/icon="res://icon.png"
 
 [autoload]
 
 Constants="*res://Config/constants.gd"
+SaveAndLoad="*res://Config/save_and_load.gd"
 
 [cursor]
 
