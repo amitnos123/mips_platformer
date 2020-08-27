@@ -23,4 +23,4 @@ columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="gui_input" from="WindowContainer/WindowBackground/InventoryScrollContainer" to="." method="_on_ScrollContainer_gui_input"]
+[connection signal="gui_input" from="WindowContainer/WindowBackground/InventoryScrollContainer" to="." method="_on_scroll_container_gui_input"]

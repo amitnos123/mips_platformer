@@ -12,7 +12,6 @@ export(Color) var selectColor : Color = Color.black
 
 onready var selected = false setget set_selected, is_selected
 onready var item_data setget set_item_data, get_item_data
-onready var ITEM_INVENTORY_NODEPATH = $ItemInventory
 
 var container_id = null
 var is_preview_event_press = false
@@ -30,16 +29,6 @@ func _on_pressed(event):
 		elif is_preview_event_press:
 			self.selected = !selected
 
-# Trigger on starting to drag the item
-# @returns {void}
-func _on_item_inventory_dragged(container_id):
-	emit_signal("_on_dragged",container_id)
-
-# Trigger on finish to drag the item
-# @returns {void}
-func _on_item_inventory_stop_drag(container_id):
-	emit_signal("_on_stop_drag",container_id)
-
 func set_selected(value):
 	if value != selected:
 		if value:
@@ -47,30 +36,33 @@ func set_selected(value):
 		else:
 			unselect()
 
-func set_item_data(value):
-	ITEM_INVENTORY_NODEPATH.item_data = value
-	
-func get_item_data():
-	return ITEM_INVENTORY_NODEPATH.item_data
-
-func is_selected() -> bool:
+func is_selected():
 	return selected
 
-# Selecting the item container
-# @returns {void}
-func select() -> void:
+func select():
 	selected = true
 	self.self_modulate = selectColor
 	emit_signal('_on_select', container_id)
 
-# Unselecting the item container
-# @returns {void}
-func unselect() -> void:
+func unselect():
 	selected = false
 	self.self_modulate = defaultColor
 	emit_signal('_on_unselect', container_id)
 
-# Removes the item
-# @returns {void}
-func remove_item() -> void:
-	ITEM_INVENTORY_NODEPATH.remove_item()
+func set_item_data(value):
+	get_child(0).item_data = value
+	
+func get_item_data():
+	return get_child(0).item_data
+
+func remove_item():
+	get_child(0).remove_item()
+
+func _on_mouse_change_window(window_node):
+	pass
+
+func _on_item_inventory_dragged(container_id):
+	emit_signal("_on_dragged",container_id)
+
+func _on_item_inventory_stop_drag(container_id):
+	emit_signal("_on_stop_drag",container_id)

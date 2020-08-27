@@ -88,6 +88,8 @@ __meta__ = {
 
 [node name="PlayerInventory" parent="Camera2D/HUD/Windows" instance=ExtResource( 10 )]
 visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_right = 295.0
 margin_bottom = 300.0
 [connection signal="timeout" from="States/Jump/JumpDuration" to="States/Jump" method="_on_JumpDuration_timeout"]
@@ -95,3 +97,4 @@ margin_bottom = 300.0
 [connection signal="stop_lying_down" from="States/LieDown" to="." method="_on_stop_lying_down"]
 [connection signal="crawling" from="States/Crawl" to="." method="_on_crawl"]
 [connection signal="stop_lying_down" from="States/Crawl" to="." method="_on_stop_lying_down"]
+[connection signal="item_drop" from="Camera2D/HUD/Windows/PlayerInventory" to="." method="_on_window_inventory_item_drop"]

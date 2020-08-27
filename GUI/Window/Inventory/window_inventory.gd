@@ -36,45 +36,24 @@ func _ready():
 		item_grid_container_node.add_child(itemContainerNode)
 
 func add_item(item_data : Item):
-#	if item_data is ItemQuantity:
-#	else:
 	for itemContainerNode in item_grid_container_node.get_children():
 		if itemContainerNode.item_data == null:
 			itemContainerNode.item_data = item_data
 			break
 
-func remove_item(container_id):
-	pass
-
 func unselect_all():
 	for itemContainerNode in $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_children():
 		itemContainerNode.selected = false
 
-func _on_ScrollContainer_gui_input(event):
+func _on_scroll_container_gui_input(event):
 	.drag_window(event)
 
 func _on_item_container_select(container_id):
 	if not $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).item_data:
-		var itemInventoryTestNode = item_inventory_test.instance()
+		var itemInventoryTestNode = item_inventory_test.instance() # Create a demo inventory item
 		$WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).item_data = itemInventoryTestNode.item_data
 
-func _on_item_container_unselect(container_id):
-	pass
-#	print(selectedItemsDictionary[container_id].selected)
-#	print('unselect container_id=', container_id)
-#	var deleteNode = $WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).get_child(0)
-#	$WindowContainer/WindowBackground/InventoryScrollContainer/ItemsGridContainer.get_child(container_id).remove_child(deleteNode)
-
-func is_full():
-	pass
-#	for container in selectedItemsDictionary:
-#		if selectedItemsDictionary[container].item_data == null:
-#			return false
-#	return true
-
 func can_add_item(item_data : Item):
-#	if item_data is ItemQuantity:
-#	else:
 	for itemContainerNode in item_grid_container_node.get_children():
 		if itemContainerNode.item_data == null:
 			return true
