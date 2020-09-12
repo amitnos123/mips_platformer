@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player/HUD/Windows/Abilities/Ability Item List/ability_item_list.gd" type="Script" id=1]
+[ext_resource path="res://Player/HUD/Windows/Abilities/Ability Item List/ability_level_up_button.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 52, 53 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 52, 0, 52, 53 )
+
+[node name="AbilityItemList" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AbilityIcon" type="TextureRect" parent="."]
+margin_right = 52.0
+margin_bottom = 52.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AbilityAddLevelButton" type="TextureButton" parent="."]
+margin_left = 60.0
+margin_top = 30.0
+margin_right = 80.0
+margin_bottom = 50.0
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AbilitiyLevelText" type="RichTextLabel" parent="."]
+margin_left = 57.0
+margin_top = 4.0
+margin_right = 73.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1.5, 1.5 )
+meta_underlined = false
+text = "12"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

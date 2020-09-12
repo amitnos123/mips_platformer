@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GUI/Window/window.gd" type="Script" id=1]
+[ext_resource path="res://GUI/Buttons/close button-Sheet.png" type="Texture" id=2]
 
-[sub_resource type="StyleBoxFlat" id=1]
-border_color = Color( 0.898039, 0, 0.14902, 1 )
-border_blend = true
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 26, 0, 26, 26 )
 
 [node name="Window" type="Control"]
 anchor_right = 1.0
@@ -35,7 +44,9 @@ __meta__ = {
 [node name="Label" type="Label" parent="WindowContainer/WindowBackground"]
 anchor_right = 1.0
 margin_bottom = 26.0
-custom_styles/normal = SubResource( 1 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "label"
 align = 1
 valign = 1
@@ -52,15 +63,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CloseButton" type="Button" parent="WindowContainer/WindowBackground/Label"]
+[node name="CloseButton" type="TextureButton" parent="WindowContainer/WindowBackground/Label"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -25.9999
-margin_right = 6.10352e-05
-margin_bottom = 1.90735e-06
+margin_left = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource( 4 )
+texture_pressed = SubResource( 5 )
+expand = true
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 [connection signal="gui_input" from="WindowContainer" to="." method="_on_window_container_gui_input"]

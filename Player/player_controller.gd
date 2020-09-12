@@ -8,6 +8,7 @@ signal item_drop(item_drop_node)
 var look_direction = Vector2(1, 0) setget set_look_direction
 
 onready var inventory_node_path = $Camera2D/HUD/Windows/PlayerInventory
+onready var window_abilities_node_path = $Camera2D/HUD/Windows/PlayerWindowAbilities
 onready var windows_node_path = $Camera2D/HUD/Windows
 
 export(Vector2) var LIE_DOWN_POSITION = Vector2.DOWN * 2
@@ -22,6 +23,11 @@ func _unhandled_input(event):
 			inventory_node_path.set_visible(false)
 		else:
 			open_window(inventory_node_path)
+	elif event.is_action_pressed("toggle_window_player_abilities"):
+		if window_abilities_node_path.is_visible():
+			window_abilities_node_path.set_visible(false)
+		else:
+			open_window(window_abilities_node_path)
 
 # Set the look direction of the player
 # @param {Vector2} value - Vector2 of the direction which the player will look

@@ -1,3 +1,5 @@
+extends Node
+
 const DEFAULT_ENCRYPT_SAVE_CODE = 'Tu4Ml5v1wFjNq7IqsRfK'
 const SAVE_DIR = "user://saves/"
 
