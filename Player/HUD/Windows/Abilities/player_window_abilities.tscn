@@ -1,18 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/HUD/Windows/Abilities/player_window_abilities.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Window/window.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/HUD/Windows/Abilities/Ability Item List/Ability Item List Test/ability_item_list_test.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/HUD/Windows/window_abilities_player_theme.tres" type="Theme" id=4]
 
 [node name="PlayerWindowAbilities" instance=ExtResource( 2 )]
 margin_right = -834.0
 margin_bottom = -250.0
+theme = ExtResource( 4 )
 script = ExtResource( 1 )
 DEFAULT_LABEL_TEXT = "Abilities"
 
 [node name="WindowBackground" parent="WindowContainer" index="0"]
-margin_right = 183.0
-margin_bottom = 343.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 185.0
+margin_bottom = 345.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="WindowContainer/WindowBackground" index="1"]
 anchor_right = 1.0

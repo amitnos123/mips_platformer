@@ -5,7 +5,7 @@ class_name WindowInventory
 signal mouse_change_window(window_node)
 signal item_drop(item_drop_node)
 
-export(Color) var DEFAULT_COLOR : Color = Color.darkviolet
+export(Color) var DEFAULT_COLOR : Color = Color.darkgray
 export(Color) var SELECT_COLOR : Color = Color.forestgreen
 
 export(int) var COLUMNS : int = 4
