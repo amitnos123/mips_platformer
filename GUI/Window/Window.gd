@@ -3,6 +3,7 @@ extends Control
 
 class_name Window, 'res://GUI/Window/window_icon.png'
 
+signal mouse_change_window(window_node)
 signal move_to_top
 
 export var DEFAULT_LABEL_TEXT = 'label'

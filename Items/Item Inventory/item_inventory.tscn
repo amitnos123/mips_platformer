@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Items/Item Inventory/item_inventory_controller.gd" type="Script" id=1]
+[ext_resource path="res://GUI/Tooltip/tooltip.tscn" type="PackedScene" id=2]
 
 [node name="ItemInventory" type="TextureRect"]
 margin_right = 40.0
@@ -8,4 +9,54 @@ margin_bottom = 40.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
+}
+
+[node name="ItemTooltip" parent="." instance=ExtResource( 2 )]
+visible = false
+light_mask = 2
+margin_right = 984.0
+margin_bottom = 560.0
+
+[node name="ItemTexture" type="TextureRect" parent="ItemTooltip"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 400.0
+margin_bottom = 400.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="RichTextLabel" parent="ItemTooltip"]
+margin_left = 460.0
+margin_top = 40.0
+margin_right = 994.0
+margin_bottom = 400.0
+text = "S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ S t a t s _ "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Information" type="RichTextLabel" parent="ItemTooltip"]
+margin_left = 460.0
+margin_top = 430.0
+margin_right = 994.0
+margin_bottom = 570.0
+text = "I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ I n f o r m a t i o n _ "
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Requirements" type="RichTextLabel" parent="ItemTooltip"]
+margin_left = 40.0
+margin_top = 430.0
+margin_right = 400.0
+margin_bottom = 570.0
+text = "R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ R e q u i r e m e n t s _ "
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }

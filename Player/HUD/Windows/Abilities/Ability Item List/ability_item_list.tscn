@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Player/HUD/Windows/Abilities/Ability Item List/ability_item_list.gd" type="Script" id=1]
 [ext_resource path="res://Player/HUD/Windows/Abilities/Ability Item List/ability_level_up_button.png" type="Texture" id=2]
+[ext_resource path="res://Player/HUD/Windows/Abilities/Ability Item List/ability_icon.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -16,7 +16,6 @@ region = Rect2( 52, 0, 52, 53 )
 [node name="AbilityItemList" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -24,9 +23,13 @@ __meta__ = {
 [node name="AbilityIcon" type="TextureRect" parent="."]
 margin_right = 52.0
 margin_bottom = 52.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TimerAbilityInfo" type="Timer" parent="AbilityIcon"]
+one_shot = true
 
 [node name="AbilityAddLevelButton" type="TextureButton" parent="."]
 margin_left = 60.0
@@ -52,3 +55,5 @@ scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="mouse_entered" from="AbilityIcon" to="AbilityIcon" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AbilityIcon" to="AbilityIcon" method="_on_mouse_exited"]

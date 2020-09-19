@@ -10,10 +10,12 @@ signal _on_stop_drag(container_id)
 var item_data : Item = null setget set_item_data, get_item_data
 onready var is_mouse_over_window = false
 onready var is_dragged = false
+onready var EMPTY_ITEM_INVENTORY_PACKED_SCERNE = load(EMPTY_ITEM_INVENTORY)
 
 func _ready():
 	connect('_on_dragged', get_parent(), '_on_item_inventory_dragged')
 	connect('_on_stop_drag', get_parent(), '_on_item_inventory_stop_drag')
+#	load(EMPTY_ITEM_INVENTORY)
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -58,17 +60,28 @@ func can_drop_data(_pos, data) -> bool:
 # @param {item_container} _pos - The item container which was dragged
 # @returns {void}
 func drop_data(_pos, item_container) -> void:
-	var item_inventory = item_container.get_child(0)
-	var item_inventory_duplicate = item_inventory.duplicate()
 	
+	var item_inventory = item_container.get_child(0)
+	
+	var item_inventory_duplicate = item_inventory.item_data.inventory_scene.instance()
 	self.get_parent().selected = false
 	item_container.selected = false
 	
-	item_inventory.replace_by(self.duplicate())
-	replace_by(item_inventory_duplicate)
+	if item_data:
+		item_inventory.replace_by(item_data.inventory_scene.instance())
+	else:
+#		item_inventory.replace_by(load(EMPTY_ITEM_INVENTORY).instance())
+		item_inventory.replace_by(EMPTY_ITEM_INVENTORY_PACKED_SCERNE.instance())
+		
+	if item_inventory.item_data:
+		replace_by(item_inventory_duplicate.item_data.inventory_scene.instance())
+	else:
+#		replace_by(load(EMPTY_ITEM_INVENTORY).instance())
+		replace_by(EMPTY_ITEM_INVENTORY_PACKED_SCERNE.instance())
 
 # Removes the item
 # @returns {void}
 func remove_item() -> void:
-	var emptyItemInventory = load(EMPTY_ITEM_INVENTORY)
-	replace_by(emptyItemInventory.instance(), false)
+#	var emptyItemInventory = load(EMPTY_ITEM_INVENTORY)
+#	replace_by(emptyItemInventory.instance(), false)
+	replace_by(EMPTY_ITEM_INVENTORY_PACKED_SCERNE.instance(), false)

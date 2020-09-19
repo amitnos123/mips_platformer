@@ -70,6 +70,11 @@ _global_script_classes=[ {
 "path": "res://State Machine/state_machine.gd"
 }, {
 "base": "Control",
+"class": "Tooltip",
+"language": "GDScript",
+"path": "res://GUI/Tooltip/tooltip.gd"
+}, {
+"base": "Control",
 "class": "Window",
 "language": "GDScript",
 "path": "res://GUI/Window/window.gd"
@@ -97,6 +102,7 @@ _global_script_class_icons={
 "Projectile": "",
 "State": "res://State Machine/state_icon.png",
 "StateMachine": "res://State Machine/state_machine_icon.png",
+"Tooltip": "",
 "Window": "res://GUI/Window/window_icon.png",
 "WindowInventory": "",
 "requirementAbilityItemList": ""

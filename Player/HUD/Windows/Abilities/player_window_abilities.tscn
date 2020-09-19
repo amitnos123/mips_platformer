@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/HUD/Windows/Abilities/player_window_abilities.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Window/window.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/HUD/Windows/Abilities/Ability Item List/Ability Item List Test/ability_item_list_test.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/HUD/Windows/window_abilities_player_theme.tres" type="Theme" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+class_name AbilityItemList
+
+onready var AbilityIcon = $AbilityIcon
+
+func _ready():
+	pass
+"
 
 [node name="PlayerWindowAbilities" instance=ExtResource( 2 )]
 margin_right = -834.0
@@ -13,10 +24,10 @@ script = ExtResource( 1 )
 DEFAULT_LABEL_TEXT = "Abilities"
 
 [node name="WindowBackground" parent="WindowContainer" index="0"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 185.0
-margin_bottom = 345.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 182.0
+margin_bottom = 342.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="WindowContainer/WindowBackground" index="1"]
 anchor_right = 1.0
@@ -45,6 +56,7 @@ margin_right = 77.0
 margin_bottom = 50.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest2" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="1" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -54,6 +66,7 @@ margin_right = 77.0
 margin_bottom = 104.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest3" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="2" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -63,6 +76,7 @@ margin_right = 77.0
 margin_bottom = 158.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest4" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="3" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -72,6 +86,7 @@ margin_right = 77.0
 margin_bottom = 212.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest5" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="4" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -81,6 +96,7 @@ margin_right = 77.0
 margin_bottom = 266.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest6" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="5" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -90,6 +106,7 @@ margin_right = 77.0
 margin_bottom = 320.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest7" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="6" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -99,6 +116,7 @@ margin_right = 77.0
 margin_bottom = 374.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest8" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="7" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -108,6 +126,7 @@ margin_right = 77.0
 margin_bottom = 428.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest9" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="8" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -117,6 +136,7 @@ margin_right = 77.0
 margin_bottom = 482.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest10" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="9" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -126,6 +146,7 @@ margin_right = 77.0
 margin_bottom = 536.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest11" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="10" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -135,6 +156,7 @@ margin_right = 77.0
 margin_bottom = 590.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest12" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="11" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -144,6 +166,7 @@ margin_right = 77.0
 margin_bottom = 644.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest13" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="12" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -153,6 +176,7 @@ margin_right = 77.0
 margin_bottom = 698.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )
 
 [node name="AbilityItemListTest14" parent="WindowContainer/WindowBackground/ScrollContainer/GridContainer" index="13" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -162,3 +186,4 @@ margin_right = 77.0
 margin_bottom = 752.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+script = SubResource( 1 )

@@ -91,7 +91,7 @@ __meta__ = {
 [node name="PlayerInventory" parent="Camera2D/HUD/Windows" instance=ExtResource( 10 )]
 visible = false
 margin_right = 295.0
-margin_bottom = 300.0
+margin_bottom = 420.0
 theme = ExtResource( 15 )
 DEFAULT_LABEL_TEXT = "Inventory"
 SCROLLBAR_MIN_RECT_SIZE = Vector2( 8, 0 )
