@@ -6,18 +6,27 @@ const EMPTY_ITEM_INVENTORY = 'res://Items/Item Inventory/item_inventory.tscn'
 
 signal _on_dragged(container_id)
 signal _on_stop_drag(container_id)
+signal _on_show_tooltip(item_tooltip_node)
 
+export(float) var TIMER_WAIT_TIME = 1
+
+var is_mouse_over_item = false
 var item_data : Item = null setget set_item_data, get_item_data
 onready var is_mouse_over_window = false
 onready var is_dragged = false
 onready var EMPTY_ITEM_INVENTORY_PACKED_SCERNE = load(EMPTY_ITEM_INVENTORY)
+onready var TOOLTIP = $ItemTooltip
+onready var TIMER_TOOLTIP = $TimerTooltip
 
 func _ready():
 	connect('_on_dragged', get_parent(), '_on_item_inventory_dragged')
 	connect('_on_stop_drag', get_parent(), '_on_item_inventory_stop_drag')
-#	load(EMPTY_ITEM_INVENTORY)
+	connect('_on_show_tooltip', get_parent(), '_on_show_tooltip')
 
-func _input(event):
+func _gui_input(event):
+	if is_mouse_over_item && event is InputEventMouseMotion:
+		TIMER_TOOLTIP.start(TIMER_WAIT_TIME)
+	
 	if event is InputEventMouseButton:
 		if Input.is_action_just_released("mouse1") && is_dragged:
 			is_dragged = false
@@ -85,3 +94,22 @@ func remove_item() -> void:
 #	var emptyItemInventory = load(EMPTY_ITEM_INVENTORY)
 #	replace_by(emptyItemInventory.instance(), false)
 	replace_by(EMPTY_ITEM_INVENTORY_PACKED_SCERNE.instance(), false)
+
+func _on_mouse_entered():
+	is_mouse_over_item = true
+	TIMER_TOOLTIP.start(TIMER_WAIT_TIME)
+
+func _on_mouse_exited():
+	is_mouse_over_item = false
+	TIMER_TOOLTIP.stop()
+
+func _on_timer_tooltip_timeout():
+	TIMER_TOOLTIP.stop()
+	
+	var duplicate_tooltip = TOOLTIP.duplicate()
+	
+	duplicate_tooltip.get_node("Stats").text = TOOLTIP.get_node("Stats").text
+	duplicate_tooltip.get_node("Information").text = TOOLTIP.get_node("Information").text
+	duplicate_tooltip.get_node("Requirements").text = TOOLTIP.get_node("Requirements").text
+	
+	emit_signal('_on_show_tooltip', duplicate_tooltip)

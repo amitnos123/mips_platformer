@@ -110,3 +110,4 @@ margin_bottom = 263.0
 [connection signal="crawling" from="States/Crawl" to="." method="_on_crawl"]
 [connection signal="stop_lying_down" from="States/Crawl" to="." method="_on_stop_lying_down"]
 [connection signal="item_drop" from="Camera2D/HUD/Windows/PlayerInventory" to="." method="_on_window_inventory_item_drop"]
+[connection signal="show_tooltip" from="Camera2D/HUD/Windows/PlayerInventory" to="Camera2D/HUD/Windows" method="_on_show_tooltip"]

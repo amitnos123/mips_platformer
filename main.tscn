@@ -17,6 +17,7 @@ scroll_limit_end = Vector2( 1700, 600 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
 margin_left = -413.0
 margin_right = 1152.0
 margin_bottom = 589.0

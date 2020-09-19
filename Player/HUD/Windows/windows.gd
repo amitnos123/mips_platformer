@@ -6,6 +6,8 @@ signal mouse_change_window(window_node)
 onready var mouse_on_window = null
 onready var windows_array = []
 
+onready var current_tooltip = null
+
 func _ready():
 	var mouse_pos = get_global_mouse_position()
 	for window in get_children():
@@ -14,7 +16,12 @@ func _ready():
 		windows_array.push_back(window)
 
 func _input(event):
+	
+	if current_tooltip:
+		current_tooltip.queue_free()
+	
 	if event is InputEventMouseMotion:
+		
 		var in_window = false
 		for window in windows_array:
 			if window.visible:
@@ -45,3 +52,11 @@ func add_window(window : Window) -> void:
 	
 	windows_array.push_back(window)
 	add_child(window)
+
+func _on_show_tooltip(item_tooltip_node):
+	current_tooltip = item_tooltip_node
+	
+	item_tooltip_node.visible = true
+	item_tooltip_node.rect_position = get_viewport().get_mouse_position()
+	
+	add_child(item_tooltip_node)

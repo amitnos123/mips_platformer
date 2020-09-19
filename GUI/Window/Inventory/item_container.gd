@@ -6,6 +6,7 @@ signal _on_select
 signal _on_unselect
 signal _on_dragged(container_id)
 signal _on_stop_drag(container_id)
+signal _on_show_tooltip(item_tooltip_node)
 
 export(Color) var defaultColor : Color = Color.white
 export(Color) var selectColor : Color = Color.black
@@ -66,3 +67,6 @@ func _on_item_inventory_dragged(container_id):
 
 func _on_item_inventory_stop_drag(container_id):
 	emit_signal("_on_stop_drag",container_id)
+
+func _on_show_tooltip(item_tooltip_node):
+	emit_signal('_on_show_tooltip', item_tooltip_node)

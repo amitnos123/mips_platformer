@@ -3,6 +3,7 @@ extends Window
 class_name WindowInventory
 
 signal item_drop(item_drop_node)
+signal show_tooltip(item_tooltip_node)
 
 export(Color) var DEFAULT_COLOR : Color = Color.darkgray
 export(Color) var SELECT_COLOR : Color = Color.forestgreen
@@ -30,6 +31,7 @@ func _ready():
 		itemContainerNode.connect('_on_unselect', self, '_on_item_container_unselect')
 		itemContainerNode.connect('_on_dragged', self, '_on_item_container_dragged')
 		itemContainerNode.connect('_on_stop_drag', self, '_on_item_container_stop_drag')
+		itemContainerNode.connect('_on_show_tooltip', self, '_on_item_container_show_tooltip')
 		
 		connect('mouse_change_window', itemContainerNode, '_on_mouse_change_window')
 		item_grid_container_node.add_child(itemContainerNode)
@@ -67,3 +69,6 @@ func _on_item_container_stop_drag(container_id):
 		emit_signal("item_drop", drop_item_node)
 		item_grid_container_node.get_child(container_id).remove_item()
 		item_grid_container_node.get_child(container_id).selected = false
+
+func _on_item_container_show_tooltip(item_tooltip_node):
+	emit_signal('show_tooltip', item_tooltip_node)
