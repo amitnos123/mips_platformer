@@ -7,10 +7,12 @@ onready var generated_code : int = 0
 onready var item_name : String = ''
 onready var drop_scene : PackedScene
 onready var inventory_scene : PackedScene
+onready var tooltip_scene : PackedScene
 
-func _init(code : int, generated_code : int, item_name : String, drop_scene : PackedScene, inventory_scene : PackedScene):
+func _init(code : int, generated_code : int, item_name : String, drop_scene : PackedScene, inventory_scene : PackedScene, tooltip_scene : PackedScene):
 	self.code = code
 	self.generated_code = generated_code
 	self.item_name = item_name
 	self.drop_scene = drop_scene
 	self.inventory_scene = inventory_scene
+	self.tooltip_scene = tooltip_scene

@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Items/Item Inventory/item_inventory_controller.gd"
 }, {
+"base": "Tooltip",
+"class": "ItemTooltip",
+"language": "GDScript",
+"path": "res://Items/Item Tooltip/item_tooltip_controller.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -97,6 +102,7 @@ _global_script_class_icons={
 "ItemContainer": "",
 "ItemDrop": "",
 "ItemInventory": "",
+"ItemTooltip": "",
 "Player": "",
 "PlayerInventory": "",
 "Projectile": "",

@@ -15,7 +15,6 @@ var item_data : Item = null setget set_item_data, get_item_data
 onready var is_mouse_over_window = false
 onready var is_dragged = false
 onready var EMPTY_ITEM_INVENTORY_PACKED_SCERNE = load(EMPTY_ITEM_INVENTORY)
-onready var TOOLTIP = $ItemTooltip
 onready var TIMER_TOOLTIP = $TimerTooltip
 
 func _ready():
@@ -106,10 +105,4 @@ func _on_mouse_exited():
 func _on_timer_tooltip_timeout():
 	TIMER_TOOLTIP.stop()
 	
-	var duplicate_tooltip = TOOLTIP.duplicate()
-	
-	duplicate_tooltip.get_node("Stats").text = TOOLTIP.get_node("Stats").text
-	duplicate_tooltip.get_node("Information").text = TOOLTIP.get_node("Information").text
-	duplicate_tooltip.get_node("Requirements").text = TOOLTIP.get_node("Requirements").text
-	
-	emit_signal('_on_show_tooltip', duplicate_tooltip)
+	emit_signal('_on_show_tooltip', item_data.tooltip_scene.instance())
