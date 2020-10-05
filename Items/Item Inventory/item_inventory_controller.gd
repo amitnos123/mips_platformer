@@ -22,7 +22,7 @@ func _ready():
 	connect('_on_stop_drag', get_parent(), '_on_item_inventory_stop_drag')
 	connect('_on_show_tooltip', get_parent(), '_on_show_tooltip')
 
-func _gui_input(event):
+func _input(event):
 	if is_mouse_over_item && event is InputEventMouseMotion:
 		TIMER_TOOLTIP.start(TIMER_WAIT_TIME)
 	
@@ -78,20 +78,16 @@ func drop_data(_pos, item_container) -> void:
 	if item_data:
 		item_inventory.replace_by(item_data.inventory_scene.instance())
 	else:
-#		item_inventory.replace_by(load(EMPTY_ITEM_INVENTORY).instance())
 		item_inventory.replace_by(EMPTY_ITEM_INVENTORY_PACKED_SCERNE.instance())
 		
 	if item_inventory.item_data:
 		replace_by(item_inventory_duplicate.item_data.inventory_scene.instance())
 	else:
-#		replace_by(load(EMPTY_ITEM_INVENTORY).instance())
 		replace_by(EMPTY_ITEM_INVENTORY_PACKED_SCERNE.instance())
 
 # Removes the item
 # @returns {void}
 func remove_item() -> void:
-#	var emptyItemInventory = load(EMPTY_ITEM_INVENTORY)
-#	replace_by(emptyItemInventory.instance(), false)
 	replace_by(EMPTY_ITEM_INVENTORY_PACKED_SCERNE.instance(), false)
 
 func _on_mouse_entered():
@@ -105,4 +101,5 @@ func _on_mouse_exited():
 func _on_timer_tooltip_timeout():
 	TIMER_TOOLTIP.stop()
 	
-	emit_signal('_on_show_tooltip', item_data.tooltip_scene.instance())
+	if item_data:
+		emit_signal('_on_show_tooltip', item_data.tooltip_scene.instance())

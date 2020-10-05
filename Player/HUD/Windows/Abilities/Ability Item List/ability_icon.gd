@@ -15,7 +15,7 @@ func get_drag_data(_pos) -> Node:
 	tr.expand = true
 	set_drag_preview(tr)
 	
-	return self
+	return get_parent()
 	# Need to send: icon, level, ability 
 
 

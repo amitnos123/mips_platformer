@@ -6,9 +6,9 @@
 
 [resource]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "picked",
+"name": "drop",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
@@ -16,8 +16,8 @@ animations = [ {
 "name": "despawn",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "drop",
+"name": "picked",
 "speed": 5.0
 } ]

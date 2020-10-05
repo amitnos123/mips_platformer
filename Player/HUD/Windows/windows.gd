@@ -49,6 +49,7 @@ func add_window(window : Window) -> void:
 	
 	if window is WindowInventory:
 		window.connect('item_drop', owner, '_on_window_inventory_item_drop')
+		window.connect('show_tooltip', self, '_on_show_tooltip')
 	
 	windows_array.push_back(window)
 	add_child(window)
